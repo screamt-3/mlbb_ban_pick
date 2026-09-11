@@ -1,0 +1,16 @@
+fixture_id: msc-ewc-2026-group-stage-day1-game-3
+source_url: https://www.youtube.com/watch?v=Ew_-LE64e4w
+segment_source_start_seconds: 14520
+coarse_positive_source_timestamps: [14760, 14940]
+pre_swap_source_timestamp_seconds: 14926.25
+swap_source_timestamp_seconds: 14926.5
+post_swap_source_timestamp_seconds: 14954
+transition_source_timestamp_seconds: 14960
+blue_team: True Rippers
+red_team: Team Vitality
+blue_picks: [Badang, Alice, Karrie, Ling, Eudora]
+red_picks: [Atlas, Akai, Valentina, Paquito, Claude]
+last_pick_side: blue
+notes:
+  - Two center countdown timers plus ADJUST mark the swap boundary.
+  - Hero order inside a multi-selection phase is not asserted without lock-event evidence.

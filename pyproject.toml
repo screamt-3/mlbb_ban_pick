@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mlbb-draft-extractor"
+version = "0.1.0"
+description = "Layout-specific Mobile Legends draft extraction from tournament VODs"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "httpx>=0.28,<1",
+  "numpy>=2.0,<3",
+  "opencv-python-headless>=4.10,<5",
+  "pydantic>=2.10,<3",
+  "pytesseract>=0.3.13,<1",
+  "PyYAML>=6.0,<7",
+  "rapidfuzz>=3.10,<4",
+  "uvicorn[standard]>=0.34,<1",
+  "yt-dlp[default]>=2025.1.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<9",
+  "pytest-cov>=6,<8",
+]
+
+[project.scripts]
+mlbb-draft-api = "mlbb_draft.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

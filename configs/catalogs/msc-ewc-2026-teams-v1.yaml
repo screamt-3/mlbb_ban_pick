@@ -1,0 +1,21 @@
+schema_version: "1.0"
+catalog_id: msc-ewc-2026-teams-v1
+version: "1"
+source: https://esportsworldcup.com/en/competitions/2026/mlbb
+teams:
+  - {team_id: team-spirit, canonical_name: Team Spirit, aliases: [SPIRIT, TS]}
+  - {team_id: yangon-galacticos, canonical_name: Yangon Galacticos, aliases: [YG]}
+  - {team_id: onic, canonical_name: ONIC, aliases: [ONIC ID]}
+  - {team_id: team-falcons-ph, canonical_name: Team Falcons PH, aliases: [FALCONS PH, FLCN PH]}
+  - {team_id: team-vitality, canonical_name: Team Vitality, aliases: [VITALITY, BTR, BIGETRON BY VITALITY], logo_assets: [assets/teams/msc-ewc-2026-v1/team-vitality.png]}
+  - {team_id: team-vamos, canonical_name: Team Vamos, aliases: [VAMOS]}
+  - {team_id: aurora-gaming, canonical_name: Aurora Gaming, aliases: [AURORA]}
+  - {team_id: pro-esports, canonical_name: Pro Esports, aliases: [PRO]}
+  - {team_id: selangor-red-giants, canonical_name: Selangor Red Giants, aliases: [SRG]}
+  - {team_id: guangzhou-gaming, canonical_name: Guangzhou Gaming, aliases: [GZG]}
+  - {team_id: entity7, canonical_name: ENTITY7, aliases: [E7]}
+  - {team_id: team-falcons-mena, canonical_name: Team Falcons MENA, aliases: [FALCONS MENA]}
+  - {team_id: team-liquid, canonical_name: Team Liquid, aliases: [TL, TLPH]}
+  - {team_id: geekay-esports, canonical_name: Geekay Esports, aliases: [GEEKAY, GK]}
+  - {team_id: ignite-gaming, canonical_name: IGNITE Gaming, aliases: [IGNITE]}
+  - {team_id: true-rippers, canonical_name: True Rippers, aliases: [TR], logo_assets: [assets/teams/msc-ewc-2026-v1/true-rippers.png]}

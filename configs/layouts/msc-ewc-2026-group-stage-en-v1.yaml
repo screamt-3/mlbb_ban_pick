@@ -1,0 +1,152 @@
+schema_version: "1.0"
+layout_id: msc-ewc-2026-group-stage-en-v1
+version: "1"
+description: MSC at EWC 2026 Group Stage English main broadcast draft HUD
+canonical_frame:
+  width: 1920
+  height: 1080
+  aspect_ratio_tolerance: 0.01
+  minimum_width: 1280
+  minimum_height: 720
+  maximum_crop_fraction: 0.03
+  letterbox_policy: detect_and_remove
+side_orientation:
+  blue: right
+  red: left
+pick_slot_order_semantics: player_order
+anchors:
+  - anchor_id: msc_ewc_lockup
+    roi: {x: 1380, y: 1000, width: 340, height: 70}
+    template_asset: assets/layouts/msc-ewc-2026-group-stage-en-v1/msc-ewc-lockup.png
+    required: true
+    minimum_score: 0.80
+    weight: 1.0
+  - anchor_id: flying_cloud
+    roi: {x: 870, y: 786, width: 180, height: 32}
+    template_asset: assets/layouts/msc-ewc-2026-group-stage-en-v1/flying-cloud.png
+    required: true
+    minimum_score: 0.78
+    weight: 0.8
+team_regions:
+  - side: red
+    recognition_method: logo_reference
+    roi: {x: 830, y: 818, width: 130, height: 177}
+  - side: blue
+    recognition_method: logo_reference
+    roi: {x: 960, y: 818, width: 130, height: 177}
+stage_cues:
+  adjust_roi: {x: 800, y: 705, width: 320, height: 65}
+  adjust_template_asset: assets/layouts/msc-ewc-2026-group-stage-en-v1/adjust-cue.png
+  left_timer_roi: {x: 710, y: 700, width: 90, height: 80}
+  right_timer_roi: {x: 1120, y: 700, width: 90, height: 80}
+detector:
+  threshold: 0.78
+  anchor_weight: 0.55
+  geometry_weight: 0.20
+  occupancy_weight: 0.20
+  stage_cue_weight: 0.05
+  locked_slot_threshold: 0.72
+  placeholder_threshold: 0.82
+  adjust_cue_threshold: 0.78
+  dual_timer_threshold: 0.72
+fine_search:
+  seconds_before_first_positive: 180
+  seconds_after_last_positive: 420
+  cadence_seconds: 2.0
+  transition_refinement_cadence_seconds: 0.25
+  event_refinement_cadence_seconds: 0.5
+  refinement_radius_seconds: 3.0
+  required_stability_samples: 3
+  disappearance_samples: 2
+  clustering_distance_seconds: 360
+  maximum_alternatives: 3
+hero_recognition:
+  high_threshold: 0.90
+  confirmed_threshold: 0.86
+  unknown_threshold: 0.78
+  high_margin: 0.08
+  confirmed_margin: 0.06
+  crop_size: 128
+  correlation_weight: 0.50
+  phash_weight: 0.25
+  histogram_weight: 0.25
+ocr:
+  language: eng
+  page_segmentation_mode: 7
+  scale_factor: 4
+  confirmed_match_threshold: 0.90
+  uncertain_match_threshold: 0.80
+  minimum_runner_up_margin: 0.08
+masks:
+  - {x: 0, y: 0, width: 1920, height: 620}
+slots:
+  - slot_id: red_pick_1
+    side: red
+    action: pick
+    visible_order: 1
+    roi: {x: 0, y: 790, width: 165, height: 205}
+    hero_name_roi: {x: 0, y: 976, width: 165, height: 19}
+  - slot_id: red_pick_2
+    side: red
+    action: pick
+    visible_order: 2
+    roi: {x: 165, y: 790, width: 165, height: 205}
+    hero_name_roi: {x: 165, y: 976, width: 165, height: 19}
+  - slot_id: red_pick_3
+    side: red
+    action: pick
+    visible_order: 3
+    roi: {x: 330, y: 790, width: 165, height: 205}
+    hero_name_roi: {x: 330, y: 976, width: 165, height: 19}
+  - slot_id: red_pick_4
+    side: red
+    action: pick
+    visible_order: 4
+    roi: {x: 495, y: 790, width: 165, height: 205}
+    hero_name_roi: {x: 495, y: 976, width: 165, height: 19}
+  - slot_id: red_pick_5
+    side: red
+    action: pick
+    visible_order: 5
+    roi: {x: 660, y: 790, width: 170, height: 205}
+    hero_name_roi: {x: 660, y: 976, width: 170, height: 19}
+  - slot_id: blue_pick_1
+    side: blue
+    action: pick
+    visible_order: 1
+    roi: {x: 1090, y: 790, width: 165, height: 205}
+    hero_name_roi: {x: 1090, y: 976, width: 165, height: 19}
+  - slot_id: blue_pick_2
+    side: blue
+    action: pick
+    visible_order: 2
+    roi: {x: 1255, y: 790, width: 165, height: 205}
+    hero_name_roi: {x: 1255, y: 976, width: 165, height: 19}
+  - slot_id: blue_pick_3
+    side: blue
+    action: pick
+    visible_order: 3
+    roi: {x: 1420, y: 790, width: 165, height: 205}
+    hero_name_roi: {x: 1420, y: 976, width: 165, height: 19}
+  - slot_id: blue_pick_4
+    side: blue
+    action: pick
+    visible_order: 4
+    roi: {x: 1585, y: 790, width: 165, height: 205}
+    hero_name_roi: {x: 1585, y: 976, width: 165, height: 19}
+  - slot_id: blue_pick_5
+    side: blue
+    action: pick
+    visible_order: 5
+    roi: {x: 1750, y: 790, width: 170, height: 205}
+    hero_name_roi: {x: 1750, y: 976, width: 170, height: 19}
+  - {slot_id: red_ban_1, side: red, action: ban, visible_order: 1, roi: {x: 12, y: 709, width: 70, height: 70}}
+  - {slot_id: red_ban_2, side: red, action: ban, visible_order: 2, roi: {x: 84, y: 709, width: 70, height: 70}}
+  - {slot_id: red_ban_3, side: red, action: ban, visible_order: 3, roi: {x: 157, y: 709, width: 70, height: 70}}
+  - {slot_id: red_ban_4, side: red, action: ban, visible_order: 4, roi: {x: 230, y: 709, width: 70, height: 70}}
+  - {slot_id: red_ban_5, side: red, action: ban, visible_order: 5, roi: {x: 304, y: 709, width: 70, height: 70}}
+  - {slot_id: blue_ban_1, side: blue, action: ban, visible_order: 1, roi: {x: 1545, y: 709, width: 70, height: 70}}
+  - {slot_id: blue_ban_2, side: blue, action: ban, visible_order: 2, roi: {x: 1617, y: 709, width: 70, height: 70}}
+  - {slot_id: blue_ban_3, side: blue, action: ban, visible_order: 3, roi: {x: 1689, y: 709, width: 70, height: 70}}
+  - {slot_id: blue_ban_4, side: blue, action: ban, visible_order: 4, roi: {x: 1762, y: 709, width: 70, height: 70}}
+  - {slot_id: blue_ban_5, side: blue, action: ban, visible_order: 5, roi: {x: 1835, y: 709, width: 70, height: 70}}

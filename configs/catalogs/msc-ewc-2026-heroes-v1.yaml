@@ -1,0 +1,666 @@
+schema_version: '1.0'
+catalog_id: msc-ewc-2026-heroes-v1
+version: '2026-09-11'
+patch: msc-ewc-2026-competitive-patch-not-publicly-disclosed
+source: https://my.mpl.mobilelegends.com/en/
+heroes:
+- hero_id: aamon
+  display_name: Aamon
+  references:
+  - asset_id: official-mpl-my-aamon
+    path: assets/heroes/msc-ewc-2026-v1/aamon.jpg
+- hero_id: akai
+  display_name: Akai
+  references:
+  - asset_id: official-mpl-my-akai
+    path: assets/heroes/msc-ewc-2026-v1/akai.jpg
+- hero_id: aldous
+  display_name: Aldous
+  references:
+  - asset_id: official-mpl-my-aldous
+    path: assets/heroes/msc-ewc-2026-v1/aldous.jpg
+- hero_id: alice
+  display_name: Alice
+  references:
+  - asset_id: official-mpl-my-alice
+    path: assets/heroes/msc-ewc-2026-v1/alice.jpg
+- hero_id: alpha
+  display_name: Alpha
+  references:
+  - asset_id: official-mpl-my-alpha
+    path: assets/heroes/msc-ewc-2026-v1/alpha.jpg
+- hero_id: alucard
+  display_name: Alucard
+  references:
+  - asset_id: official-mpl-my-alucard
+    path: assets/heroes/msc-ewc-2026-v1/alucard.jpg
+- hero_id: angela
+  display_name: Angela
+  references:
+  - asset_id: official-mpl-my-angela
+    path: assets/heroes/msc-ewc-2026-v1/angela.jpg
+- hero_id: argus
+  display_name: Argus
+  references:
+  - asset_id: official-mpl-my-argus
+    path: assets/heroes/msc-ewc-2026-v1/argus.jpg
+- hero_id: arlott
+  display_name: Arlott
+  references:
+  - asset_id: official-mpl-my-arlott
+    path: assets/heroes/msc-ewc-2026-v1/arlott.webp
+- hero_id: atlas
+  display_name: Atlas
+  references:
+  - asset_id: official-mpl-my-atlas
+    path: assets/heroes/msc-ewc-2026-v1/atlas.jpg
+- hero_id: aulus
+  display_name: Aulus
+  references:
+  - asset_id: official-mpl-my-aulus
+    path: assets/heroes/msc-ewc-2026-v1/aulus.jpg
+- hero_id: aurora
+  display_name: Aurora
+  references:
+  - asset_id: official-mpl-my-aurora
+    path: assets/heroes/msc-ewc-2026-v1/aurora.jpg
+- hero_id: badang
+  display_name: Badang
+  references:
+  - asset_id: official-mpl-my-badang
+    path: assets/heroes/msc-ewc-2026-v1/badang.jpg
+- hero_id: balmond
+  display_name: Balmond
+  references:
+  - asset_id: official-mpl-my-balmond
+    path: assets/heroes/msc-ewc-2026-v1/balmond.jpg
+- hero_id: bane
+  display_name: Bane
+  references:
+  - asset_id: official-mpl-my-bane
+    path: assets/heroes/msc-ewc-2026-v1/bane.jpg
+- hero_id: barats
+  display_name: Barats
+  references:
+  - asset_id: official-mpl-my-barats
+    path: assets/heroes/msc-ewc-2026-v1/barats.jpg
+- hero_id: baxia
+  display_name: Baxia
+  references:
+  - asset_id: official-mpl-my-baxia
+    path: assets/heroes/msc-ewc-2026-v1/baxia.jpg
+- hero_id: beatrix
+  display_name: Beatrix
+  references:
+  - asset_id: official-mpl-my-beatrix
+    path: assets/heroes/msc-ewc-2026-v1/beatrix.jpg
+- hero_id: belerick
+  display_name: Belerick
+  references:
+  - asset_id: official-mpl-my-belerick
+    path: assets/heroes/msc-ewc-2026-v1/belerick.jpg
+- hero_id: benedetta
+  display_name: Benedetta
+  references:
+  - asset_id: official-mpl-my-benedetta
+    path: assets/heroes/msc-ewc-2026-v1/benedetta.jpg
+- hero_id: brody
+  display_name: Brody
+  references:
+  - asset_id: official-mpl-my-brody
+    path: assets/heroes/msc-ewc-2026-v1/brody.jpg
+- hero_id: bruno
+  display_name: Bruno
+  references:
+  - asset_id: official-mpl-my-bruno
+    path: assets/heroes/msc-ewc-2026-v1/bruno.jpg
+- hero_id: carmilla
+  display_name: Carmilla
+  references:
+  - asset_id: official-mpl-my-carmilla
+    path: assets/heroes/msc-ewc-2026-v1/carmilla.jpg
+- hero_id: cecilion
+  display_name: Cecilion
+  references:
+  - asset_id: official-mpl-my-cecilion
+    path: assets/heroes/msc-ewc-2026-v1/cecilion.jpg
+- hero_id: chip
+  display_name: Chip
+  references:
+  - asset_id: official-mpl-my-chip
+    path: assets/heroes/msc-ewc-2026-v1/chip.jpg
+- hero_id: chou
+  display_name: Chou
+  references:
+  - asset_id: official-mpl-my-chou
+    path: assets/heroes/msc-ewc-2026-v1/chou.jpg
+- hero_id: cici
+  display_name: Cici
+  references:
+  - asset_id: official-mpl-my-cici
+    path: assets/heroes/msc-ewc-2026-v1/cici.webp
+- hero_id: claude
+  display_name: Claude
+  references:
+  - asset_id: official-mpl-my-claude
+    path: assets/heroes/msc-ewc-2026-v1/claude.jpg
+- hero_id: clint
+  display_name: Clint
+  references:
+  - asset_id: official-mpl-my-clint
+    path: assets/heroes/msc-ewc-2026-v1/clint.jpg
+- hero_id: cyclops
+  display_name: Cyclops
+  references:
+  - asset_id: official-mpl-my-cyclops
+    path: assets/heroes/msc-ewc-2026-v1/cyclops.jpg
+- hero_id: diggie
+  display_name: Diggie
+  references:
+  - asset_id: official-mpl-my-diggie
+    path: assets/heroes/msc-ewc-2026-v1/diggie.jpg
+- hero_id: dyrroth
+  display_name: Dyrroth
+  references:
+  - asset_id: official-mpl-my-dyrroth
+    path: assets/heroes/msc-ewc-2026-v1/dyrroth.jpg
+- hero_id: edith
+  display_name: Edith
+  references:
+  - asset_id: official-mpl-my-edith
+    path: assets/heroes/msc-ewc-2026-v1/edith.jpg
+- hero_id: esmeralda
+  display_name: Esmeralda
+  references:
+  - asset_id: official-mpl-my-esmeralda
+    path: assets/heroes/msc-ewc-2026-v1/esmeralda.jpg
+- hero_id: estes
+  display_name: Estes
+  references:
+  - asset_id: official-mpl-my-estes
+    path: assets/heroes/msc-ewc-2026-v1/estes.jpg
+- hero_id: eudora
+  display_name: Eudora
+  references:
+  - asset_id: official-mpl-my-eudora
+    path: assets/heroes/msc-ewc-2026-v1/eudora.jpg
+- hero_id: fanny
+  display_name: Fanny
+  references:
+  - asset_id: official-mpl-my-fanny
+    path: assets/heroes/msc-ewc-2026-v1/fanny.jpg
+- hero_id: faramis
+  display_name: Faramis
+  references:
+  - asset_id: official-mpl-my-faramis
+    path: assets/heroes/msc-ewc-2026-v1/faramis.jpg
+- hero_id: floryn
+  display_name: Floryn
+  references:
+  - asset_id: official-mpl-my-floryn
+    path: assets/heroes/msc-ewc-2026-v1/floryn.jpg
+- hero_id: franco
+  display_name: Franco
+  references:
+  - asset_id: official-mpl-my-franco
+    path: assets/heroes/msc-ewc-2026-v1/franco.jpg
+- hero_id: fredrinn
+  display_name: Fredrinn
+  references:
+  - asset_id: official-mpl-my-fredrinn
+    path: assets/heroes/msc-ewc-2026-v1/fredrinn.jpg
+- hero_id: freya
+  display_name: Freya
+  references:
+  - asset_id: official-mpl-my-freya
+    path: assets/heroes/msc-ewc-2026-v1/freya.jpg
+- hero_id: gatotkaca
+  display_name: Gatotkaca
+  references:
+  - asset_id: official-mpl-my-gatotkaca
+    path: assets/heroes/msc-ewc-2026-v1/gatotkaca.jpg
+- hero_id: gloo
+  display_name: Gloo
+  references:
+  - asset_id: official-mpl-my-gloo
+    path: assets/heroes/msc-ewc-2026-v1/gloo.jpg
+- hero_id: gord
+  display_name: Gord
+  references:
+  - asset_id: official-mpl-my-gord
+    path: assets/heroes/msc-ewc-2026-v1/gord.jpg
+- hero_id: granger
+  display_name: Granger
+  references:
+  - asset_id: official-mpl-my-granger
+    path: assets/heroes/msc-ewc-2026-v1/granger.jpg
+- hero_id: grock
+  display_name: Grock
+  references:
+  - asset_id: official-mpl-my-grock
+    path: assets/heroes/msc-ewc-2026-v1/grock.jpg
+- hero_id: guinevere
+  display_name: Guinevere
+  references:
+  - asset_id: official-mpl-my-guinevere
+    path: assets/heroes/msc-ewc-2026-v1/guinevere.jpg
+- hero_id: gusion
+  display_name: Gusion
+  references:
+  - asset_id: official-mpl-my-gusion
+    path: assets/heroes/msc-ewc-2026-v1/gusion.jpg
+- hero_id: hanabi
+  display_name: Hanabi
+  references:
+  - asset_id: official-mpl-my-hanabi
+    path: assets/heroes/msc-ewc-2026-v1/hanabi.jpg
+- hero_id: hanzo
+  display_name: Hanzo
+  references:
+  - asset_id: official-mpl-my-hanzo
+    path: assets/heroes/msc-ewc-2026-v1/hanzo.jpg
+- hero_id: harith
+  display_name: Harith
+  references:
+  - asset_id: official-mpl-my-harith
+    path: assets/heroes/msc-ewc-2026-v1/harith.jpg
+- hero_id: harley
+  display_name: Harley
+  references:
+  - asset_id: official-mpl-my-harley
+    path: assets/heroes/msc-ewc-2026-v1/harley.jpg
+- hero_id: hayabusa
+  display_name: Hayabusa
+  references:
+  - asset_id: official-mpl-my-hayabusa
+    path: assets/heroes/msc-ewc-2026-v1/hayabusa.jpg
+- hero_id: helcurt
+  display_name: Helcurt
+  references:
+  - asset_id: official-mpl-my-helcurt
+    path: assets/heroes/msc-ewc-2026-v1/helcurt.jpg
+- hero_id: hilda
+  display_name: Hilda
+  references:
+  - asset_id: official-mpl-my-hilda
+    path: assets/heroes/msc-ewc-2026-v1/hilda.jpg
+- hero_id: hirara
+  display_name: Hirara
+  references:
+  - asset_id: official-mpl-my-hirara
+    path: assets/heroes/msc-ewc-2026-v1/hirara.jpg
+- hero_id: hylos
+  display_name: Hylos
+  references:
+  - asset_id: official-mpl-my-hylos
+    path: assets/heroes/msc-ewc-2026-v1/hylos.jpg
+- hero_id: irithel
+  display_name: Irithel
+  references:
+  - asset_id: official-mpl-my-irithel
+    path: assets/heroes/msc-ewc-2026-v1/irithel.jpg
+- hero_id: ixia
+  display_name: Ixia
+  references:
+  - asset_id: official-mpl-my-ixia
+    path: assets/heroes/msc-ewc-2026-v1/ixia.webp
+- hero_id: jawhead
+  display_name: Jawhead
+  references:
+  - asset_id: official-mpl-my-jawhead
+    path: assets/heroes/msc-ewc-2026-v1/jawhead.jpg
+- hero_id: johnson
+  display_name: Johnson
+  references:
+  - asset_id: official-mpl-my-johnson
+    path: assets/heroes/msc-ewc-2026-v1/johnson.jpg
+- hero_id: joy
+  display_name: Joy
+  references:
+  - asset_id: official-mpl-my-joy
+    path: assets/heroes/msc-ewc-2026-v1/joy.jpg
+- hero_id: julian
+  display_name: Julian
+  references:
+  - asset_id: official-mpl-my-julian
+    path: assets/heroes/msc-ewc-2026-v1/julian.jpg
+- hero_id: kadita
+  display_name: Kadita
+  references:
+  - asset_id: official-mpl-my-kadita
+    path: assets/heroes/msc-ewc-2026-v1/kadita.jpg
+- hero_id: kagura
+  display_name: Kagura
+  references:
+  - asset_id: official-mpl-my-kagura
+    path: assets/heroes/msc-ewc-2026-v1/kagura.jpg
+- hero_id: kaja
+  display_name: Kaja
+  references:
+  - asset_id: official-mpl-my-kaja
+    path: assets/heroes/msc-ewc-2026-v1/kaja.jpg
+- hero_id: kalea
+  display_name: Kalea
+  references:
+  - asset_id: official-mpl-my-kalea
+    path: assets/heroes/msc-ewc-2026-v1/kalea.png
+- hero_id: karina
+  display_name: Karina
+  references:
+  - asset_id: official-mpl-my-karina
+    path: assets/heroes/msc-ewc-2026-v1/karina.jpg
+- hero_id: karrie
+  display_name: Karrie
+  references:
+  - asset_id: official-mpl-my-karrie
+    path: assets/heroes/msc-ewc-2026-v1/karrie.jpg
+- hero_id: khaleed
+  display_name: Khaleed
+  references:
+  - asset_id: official-mpl-my-khaleed
+    path: assets/heroes/msc-ewc-2026-v1/khaleed.jpg
+- hero_id: khufra
+  display_name: Khufra
+  references:
+  - asset_id: official-mpl-my-khufra
+    path: assets/heroes/msc-ewc-2026-v1/khufra.jpg
+- hero_id: kimmy
+  display_name: Kimmy
+  references:
+  - asset_id: official-mpl-my-kimmy
+    path: assets/heroes/msc-ewc-2026-v1/kimmy.jpg
+- hero_id: lancelot
+  display_name: Lancelot
+  references:
+  - asset_id: official-mpl-my-lancelot
+    path: assets/heroes/msc-ewc-2026-v1/lancelot.jpg
+- hero_id: lapu-lapu
+  display_name: Lapu-lapu
+  references:
+  - asset_id: official-mpl-my-lapu-lapu
+    path: assets/heroes/msc-ewc-2026-v1/lapu-lapu.jpg
+- hero_id: layla
+  display_name: Layla
+  references:
+  - asset_id: official-mpl-my-layla
+    path: assets/heroes/msc-ewc-2026-v1/layla.jpg
+- hero_id: leomord
+  display_name: Leomord
+  references:
+  - asset_id: official-mpl-my-leomord
+    path: assets/heroes/msc-ewc-2026-v1/leomord.jpg
+- hero_id: lesley
+  display_name: Lesley
+  references:
+  - asset_id: official-mpl-my-lesley
+    path: assets/heroes/msc-ewc-2026-v1/lesley.jpg
+- hero_id: ling
+  display_name: Ling
+  references:
+  - asset_id: official-mpl-my-ling
+    path: assets/heroes/msc-ewc-2026-v1/ling.jpg
+- hero_id: lolita
+  display_name: Lolita
+  references:
+  - asset_id: official-mpl-my-lolita
+    path: assets/heroes/msc-ewc-2026-v1/lolita.jpg
+- hero_id: lukas
+  display_name: Lukas
+  references:
+  - asset_id: official-mpl-my-lukas
+    path: assets/heroes/msc-ewc-2026-v1/lukas.webp
+- hero_id: lunox
+  display_name: Lunox
+  references:
+  - asset_id: official-mpl-my-lunox
+    path: assets/heroes/msc-ewc-2026-v1/lunox.jpg
+- hero_id: luo-yi
+  display_name: Luo Yi
+  references:
+  - asset_id: official-mpl-my-luo-yi
+    path: assets/heroes/msc-ewc-2026-v1/luo-yi.jpg
+- hero_id: lylia
+  display_name: Lylia
+  references:
+  - asset_id: official-mpl-my-lylia
+    path: assets/heroes/msc-ewc-2026-v1/lylia.jpg
+- hero_id: marcel
+  display_name: Marcel
+  references:
+  - asset_id: official-mpl-my-marcel
+    path: assets/heroes/msc-ewc-2026-v1/marcel.webp
+- hero_id: martis
+  display_name: Martis
+  references:
+  - asset_id: official-mpl-my-martis
+    path: assets/heroes/msc-ewc-2026-v1/martis.jpg
+- hero_id: masha
+  display_name: Masha
+  references:
+  - asset_id: official-mpl-my-masha
+    path: assets/heroes/msc-ewc-2026-v1/masha.jpg
+- hero_id: mathilda
+  display_name: Mathilda
+  references:
+  - asset_id: official-mpl-my-mathilda
+    path: assets/heroes/msc-ewc-2026-v1/mathilda.jpg
+- hero_id: melissa
+  display_name: Melissa
+  references:
+  - asset_id: official-mpl-my-melissa
+    path: assets/heroes/msc-ewc-2026-v1/melissa.jpg
+- hero_id: minotaur
+  display_name: Minotaur
+  references:
+  - asset_id: official-mpl-my-minotaur
+    path: assets/heroes/msc-ewc-2026-v1/minotaur.jpg
+- hero_id: minsitthar
+  display_name: Minsitthar
+  references:
+  - asset_id: official-mpl-my-minsitthar
+    path: assets/heroes/msc-ewc-2026-v1/minsitthar.jpg
+- hero_id: miya
+  display_name: Miya
+  references:
+  - asset_id: official-mpl-my-miya
+    path: assets/heroes/msc-ewc-2026-v1/miya.jpg
+- hero_id: moskov
+  display_name: Moskov
+  references:
+  - asset_id: official-mpl-my-moskov
+    path: assets/heroes/msc-ewc-2026-v1/moskov.jpg
+- hero_id: nana
+  display_name: Nana
+  references:
+  - asset_id: official-mpl-my-nana
+    path: assets/heroes/msc-ewc-2026-v1/nana.jpg
+- hero_id: natalia
+  display_name: Natalia
+  references:
+  - asset_id: official-mpl-my-natalia
+    path: assets/heroes/msc-ewc-2026-v1/natalia.jpg
+- hero_id: natan
+  display_name: Natan
+  references:
+  - asset_id: official-mpl-my-natan
+    path: assets/heroes/msc-ewc-2026-v1/natan.jpg
+- hero_id: nolan
+  display_name: Nolan
+  references:
+  - asset_id: official-mpl-my-nolan
+    path: assets/heroes/msc-ewc-2026-v1/nolan.webp
+- hero_id: novaria
+  display_name: Novaria
+  references:
+  - asset_id: official-mpl-my-novaria
+    path: assets/heroes/msc-ewc-2026-v1/novaria.jpg
+- hero_id: obsidia
+  display_name: Obsidia
+  references:
+  - asset_id: official-mpl-my-obsidia
+    path: assets/heroes/msc-ewc-2026-v1/obsidia.jpg
+- hero_id: odette
+  display_name: Odette
+  references:
+  - asset_id: official-mpl-my-odette
+    path: assets/heroes/msc-ewc-2026-v1/odette.jpg
+- hero_id: paquito
+  display_name: Paquito
+  references:
+  - asset_id: official-mpl-my-paquito
+    path: assets/heroes/msc-ewc-2026-v1/paquito.jpg
+- hero_id: pharsa
+  display_name: Pharsa
+  references:
+  - asset_id: official-mpl-my-pharsa
+    path: assets/heroes/msc-ewc-2026-v1/pharsa.jpg
+- hero_id: phoveus
+  display_name: Phoveus
+  references:
+  - asset_id: official-mpl-my-phoveus
+    path: assets/heroes/msc-ewc-2026-v1/phoveus.jpg
+- hero_id: popol-and-kupa
+  display_name: Popol and Kupa
+  references:
+  - asset_id: official-mpl-my-popol-and-kupa
+    path: assets/heroes/msc-ewc-2026-v1/popol-and-kupa.jpg
+- hero_id: rafaela
+  display_name: Rafaela
+  references:
+  - asset_id: official-mpl-my-rafaela
+    path: assets/heroes/msc-ewc-2026-v1/rafaela.jpg
+- hero_id: roger
+  display_name: Roger
+  references:
+  - asset_id: official-mpl-my-roger
+    path: assets/heroes/msc-ewc-2026-v1/roger.jpg
+- hero_id: ruby
+  display_name: Ruby
+  references:
+  - asset_id: official-mpl-my-ruby
+    path: assets/heroes/msc-ewc-2026-v1/ruby.jpg
+- hero_id: saber
+  display_name: Saber
+  references:
+  - asset_id: official-mpl-my-saber
+    path: assets/heroes/msc-ewc-2026-v1/saber.jpg
+- hero_id: selena
+  display_name: Selena
+  references:
+  - asset_id: official-mpl-my-selena
+    path: assets/heroes/msc-ewc-2026-v1/selena.jpg
+- hero_id: silvanna
+  display_name: Silvanna
+  references:
+  - asset_id: official-mpl-my-silvanna
+    path: assets/heroes/msc-ewc-2026-v1/silvanna.jpg
+- hero_id: sora
+  display_name: Sora
+  references:
+  - asset_id: official-mpl-my-sora
+    path: assets/heroes/msc-ewc-2026-v1/sora.webp
+- hero_id: sun
+  display_name: Sun
+  references:
+  - asset_id: official-mpl-my-sun
+    path: assets/heroes/msc-ewc-2026-v1/sun.jpg
+- hero_id: suyou
+  display_name: Suyou
+  references:
+  - asset_id: official-mpl-my-suyou
+    path: assets/heroes/msc-ewc-2026-v1/suyou.webp
+- hero_id: terizla
+  display_name: Terizla
+  references:
+  - asset_id: official-mpl-my-terizla
+    path: assets/heroes/msc-ewc-2026-v1/terizla.jpg
+- hero_id: thamuz
+  display_name: Thamuz
+  references:
+  - asset_id: official-mpl-my-thamuz
+    path: assets/heroes/msc-ewc-2026-v1/thamuz.jpg
+- hero_id: tigreal
+  display_name: Tigreal
+  references:
+  - asset_id: official-mpl-my-tigreal
+    path: assets/heroes/msc-ewc-2026-v1/tigreal.jpg
+- hero_id: uranus
+  display_name: Uranus
+  references:
+  - asset_id: official-mpl-my-uranus
+    path: assets/heroes/msc-ewc-2026-v1/uranus.jpg
+- hero_id: vale
+  display_name: Vale
+  references:
+  - asset_id: official-mpl-my-vale
+    path: assets/heroes/msc-ewc-2026-v1/vale.jpg
+- hero_id: valentina
+  display_name: Valentina
+  references:
+  - asset_id: official-mpl-my-valentina
+    path: assets/heroes/msc-ewc-2026-v1/valentina.jpg
+- hero_id: valir
+  display_name: Valir
+  references:
+  - asset_id: official-mpl-my-valir
+    path: assets/heroes/msc-ewc-2026-v1/valir.jpg
+- hero_id: vexana
+  display_name: Vexana
+  references:
+  - asset_id: official-mpl-my-vexana
+    path: assets/heroes/msc-ewc-2026-v1/vexana.jpg
+- hero_id: wanwan
+  display_name: Wanwan
+  references:
+  - asset_id: official-mpl-my-wanwan
+    path: assets/heroes/msc-ewc-2026-v1/wanwan.jpg
+- hero_id: x-borg
+  display_name: X.Borg
+  references:
+  - asset_id: official-mpl-my-x-borg
+    path: assets/heroes/msc-ewc-2026-v1/x-borg.jpg
+- hero_id: xavier
+  display_name: Xavier
+  references:
+  - asset_id: official-mpl-my-xavier
+    path: assets/heroes/msc-ewc-2026-v1/xavier.jpg
+- hero_id: yi-sun-shin
+  display_name: Yi Sun-Shin
+  references:
+  - asset_id: official-mpl-my-yi-sun-shin
+    path: assets/heroes/msc-ewc-2026-v1/yi-sun-shin.jpg
+- hero_id: yin
+  display_name: Yin
+  references:
+  - asset_id: official-mpl-my-yin
+    path: assets/heroes/msc-ewc-2026-v1/yin.jpg
+- hero_id: yu-zhong
+  display_name: Yu Zhong
+  references:
+  - asset_id: official-mpl-my-yu-zhong
+    path: assets/heroes/msc-ewc-2026-v1/yu-zhong.jpg
+- hero_id: yve
+  display_name: Yve
+  references:
+  - asset_id: official-mpl-my-yve
+    path: assets/heroes/msc-ewc-2026-v1/yve.jpg
+- hero_id: zetian
+  display_name: Zetian
+  references:
+  - asset_id: official-mpl-my-zetian
+    path: assets/heroes/msc-ewc-2026-v1/zetian.jpg
+- hero_id: zhask
+  display_name: Zhask
+  references:
+  - asset_id: official-mpl-my-zhask
+    path: assets/heroes/msc-ewc-2026-v1/zhask.jpg
+- hero_id: zhuxin
+  display_name: Zhuxin
+  references:
+  - asset_id: official-mpl-my-zhuxin
+    path: assets/heroes/msc-ewc-2026-v1/zhuxin.webp
+- hero_id: zilong
+  display_name: Zilong
+  references:
+  - asset_id: official-mpl-my-zilong
+    path: assets/heroes/msc-ewc-2026-v1/zilong.jpg

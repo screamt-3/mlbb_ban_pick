@@ -1,0 +1,26 @@
+schema_version: "1.0"
+rules_id: msc-ewc-2026-draft-sequence-v1
+version: "1"
+source: user-confirmed MSC at EWC 2026 sequence; public rulebook does not enumerate phase order
+provenance: user_supplied
+validation_status: provisional
+expected_blue_picks: 5
+expected_red_picks: 5
+expected_blue_bans: 5
+expected_red_bans: 5
+phases:
+  - {phase_id: red_ban_1, ordinal: 1, side: red, action: ban, count: 1}
+  - {phase_id: blue_ban_1, ordinal: 2, side: blue, action: ban, count: 2}
+  - {phase_id: red_ban_2, ordinal: 3, side: red, action: ban, count: 2}
+  - {phase_id: blue_ban_2, ordinal: 4, side: blue, action: ban, count: 1}
+  - {phase_id: red_pick_1, ordinal: 5, side: red, action: pick, count: 1}
+  - {phase_id: blue_pick_1, ordinal: 6, side: blue, action: pick, count: 2}
+  - {phase_id: red_pick_2, ordinal: 7, side: red, action: pick, count: 2}
+  - {phase_id: blue_pick_2, ordinal: 8, side: blue, action: pick, count: 1}
+  - {phase_id: blue_ban_3, ordinal: 9, side: blue, action: ban, count: 1}
+  - {phase_id: red_ban_3, ordinal: 10, side: red, action: ban, count: 1}
+  - {phase_id: blue_ban_4, ordinal: 11, side: blue, action: ban, count: 1}
+  - {phase_id: red_ban_4, ordinal: 12, side: red, action: ban, count: 1}
+  - {phase_id: blue_pick_3, ordinal: 13, side: blue, action: pick, count: 1}
+  - {phase_id: red_pick_3, ordinal: 14, side: red, action: pick, count: 2}
+  - {phase_id: blue_pick_4, ordinal: 15, side: blue, action: pick, count: 1}
