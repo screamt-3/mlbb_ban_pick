@@ -209,6 +209,18 @@ def test_ui_serves_reviewed_drafts(tmp_path: Path):
         payload = json.loads(drafts.text)
         assert len(payload["drafts"]) == 8
         assert payload["drafts"][0]["last_pick"]["hero"] == "Bruno"
+        rules, _ = ConfigRegistry(ROOT / "configs").load_rules(
+            "msc-ewc-2026-draft-sequence-v1"
+        )
+        displayed_sequence = payload["draft_sequence"]
+        assert displayed_sequence["rules_id"] == rules.rules_id
+        assert [
+            (phase["ordinal"], phase["side"], phase["action"], phase["count"])
+            for phase in displayed_sequence["phases"]
+        ] == [
+            (phase.ordinal, phase.side, phase.action, phase.count)
+            for phase in rules.phases
+        ]
 
 
 def test_evidence_frame_allows_ephemeral_success_without_retained_artifact():

@@ -38,11 +38,23 @@
         <p class="loading-state">Loading draft…</p>
       </section>
 
+      <section class="sequence-panel" aria-labelledby="sequence-title">
+        <header class="sequence-heading">
+          <div>
+            <p class="section-label">Chronological order</p>
+            <h2 id="sequence-title">Draft sequence</h2>
+          </div>
+          <span class="rules-badge" id="rules-badge">Loading rules…</span>
+        </header>
+        <div id="draft-sequence" class="sequence-groups" aria-live="polite"></div>
+        <p class="sequence-note">The rules establish team, action, and batch size. Final player slots do not reveal the earlier hero lock order, so only the independently observed last lock is named.</p>
+      </section>
+
       <footer class="footer-note">
         <span><i class="confidence-dot confirmed"></i> Printed HUD label</span>
         <span><i class="confidence-dot reviewed"></i> Visual portrait match</span>
         <span><i class="confidence-dot check"></i> Needs second check</span>
-        <span>Pick rows show final player assignment, not chronological order.</span>
+        <span>Hero rows show final player assignment; the sequence below shows chronological phases.</span>
       </footer>
     </main>
     <script src="./app.js" defer></script>

@@ -1,4 +1,4 @@
-const state = { drafts: [], index: 0, sourceUrl: "" };
+const state = { drafts: [], draftSequence: null, index: 0, sourceUrl: "" };
 
 const elements = {
   view: document.querySelector("#draft-view"),
@@ -9,7 +9,16 @@ const elements = {
   draftCount: document.querySelector("#draft-count"),
   pickCount: document.querySelector("#pick-count"),
   banCount: document.querySelector("#ban-count"),
+  sequence: document.querySelector("#draft-sequence"),
+  rulesBadge: document.querySelector("#rules-badge"),
 };
+
+const sequenceGroups = [
+  { label: "Opening bans", start: 1, end: 4 },
+  { label: "Opening picks", start: 5, end: 8 },
+  { label: "Final bans", start: 9, end: 12 },
+  { label: "Final picks", start: 13, end: 15 },
+];
 
 const imageExtensions = new Map([
   ["arlott", "webp"],
@@ -77,6 +86,49 @@ function sidePanel(side, draft) {
   </article>`;
 }
 
+function sequenceCard(phase, draft, lastPickPhase) {
+  const team = draft[phase.side].team;
+  const isLastLock = phase.phase_id === lastPickPhase?.phase_id
+    && draft.last_pick.side === phase.side;
+  const action = phase.action === "ban" ? "Ban" : "Pick";
+  const countLabel = `${phase.count} ${phase.count === 1 ? "hero" : "heroes"}`;
+  const hero = isLastLock ? draft.last_pick.hero : null;
+  const lastLock = hero
+    ? `<div class="sequence-last-lock">
+        <img src="${heroImage(hero)}" alt="" loading="lazy">
+        <span><small>Observed last lock</small><strong>${escapeHtml(hero)}</strong></span>
+      </div>`
+    : "";
+
+  return `<li class="sequence-step ${phase.side}-step${isLastLock ? " is-last" : ""}">
+    <div class="sequence-step-top">
+      <span class="sequence-number">${String(phase.ordinal).padStart(2, "0")}</span>
+      <span class="sequence-action">${action} · ${countLabel}</span>
+    </div>
+    <strong class="sequence-team">${escapeHtml(team)}</strong>
+    <span class="sequence-side">${phase.side} side</span>
+    ${lastLock}
+  </li>`;
+}
+
+function renderSequence(draft) {
+  const rules = state.draftSequence;
+  if (!rules?.phases?.length) {
+    elements.sequence.innerHTML = '<p class="error-state">Draft sequence is unavailable.</p>';
+    return;
+  }
+
+  const phases = [...rules.phases].sort((a, b) => a.ordinal - b.ordinal);
+  const lastPickPhase = [...phases].reverse().find((phase) => phase.action === "pick");
+  elements.sequence.innerHTML = sequenceGroups.map((group) => {
+    const groupPhases = phases.filter((phase) => phase.ordinal >= group.start && phase.ordinal <= group.end);
+    return `<section class="sequence-group" aria-label="${group.label}">
+      <h3>${group.label}</h3>
+      <ol>${groupPhases.map((phase) => sequenceCard(phase, draft, lastPickPhase)).join("")}</ol>
+    </section>`;
+  }).join("");
+}
+
 function render() {
   const draft = state.drafts[state.index];
   if (!draft) return;
@@ -100,6 +152,7 @@ function render() {
       <span class="status-chip${statusClass}">${statusText}</span>
     </aside>
     ${sidePanel("blue", draft)}`;
+  renderSequence(draft);
 }
 
 function move(offset) {
@@ -113,7 +166,9 @@ async function loadDrafts() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
     state.drafts = data.drafts;
+    state.draftSequence = data.draft_sequence;
     state.sourceUrl = data.source_url;
+    elements.rulesBadge.textContent = state.draftSequence?.rules_id || "Draft rules unavailable";
 
     elements.draftCount.textContent = state.drafts.length;
     elements.pickCount.textContent = state.drafts.reduce((total, draft) => total + draft.red.picks.length + draft.blue.picks.length, 0);

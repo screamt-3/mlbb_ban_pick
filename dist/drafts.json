@@ -1,5 +1,26 @@
 {
   "source_url": "https://www.youtube.com/watch?v=Ew_-LE64e4w",
+  "draft_sequence": {
+    "rules_id": "msc-ewc-2026-draft-sequence-v1",
+    "validation_status": "provisional",
+    "phases": [
+      {"phase_id": "red_ban_1", "ordinal": 1, "side": "red", "action": "ban", "count": 1},
+      {"phase_id": "blue_ban_1", "ordinal": 2, "side": "blue", "action": "ban", "count": 2},
+      {"phase_id": "red_ban_2", "ordinal": 3, "side": "red", "action": "ban", "count": 2},
+      {"phase_id": "blue_ban_2", "ordinal": 4, "side": "blue", "action": "ban", "count": 1},
+      {"phase_id": "red_pick_1", "ordinal": 5, "side": "red", "action": "pick", "count": 1},
+      {"phase_id": "blue_pick_1", "ordinal": 6, "side": "blue", "action": "pick", "count": 2},
+      {"phase_id": "red_pick_2", "ordinal": 7, "side": "red", "action": "pick", "count": 2},
+      {"phase_id": "blue_pick_2", "ordinal": 8, "side": "blue", "action": "pick", "count": 1},
+      {"phase_id": "blue_ban_3", "ordinal": 9, "side": "blue", "action": "ban", "count": 1},
+      {"phase_id": "red_ban_3", "ordinal": 10, "side": "red", "action": "ban", "count": 1},
+      {"phase_id": "blue_ban_4", "ordinal": 11, "side": "blue", "action": "ban", "count": 1},
+      {"phase_id": "red_ban_4", "ordinal": 12, "side": "red", "action": "ban", "count": 1},
+      {"phase_id": "blue_pick_3", "ordinal": 13, "side": "blue", "action": "pick", "count": 1},
+      {"phase_id": "red_pick_3", "ordinal": 14, "side": "red", "action": "pick", "count": 2},
+      {"phase_id": "blue_pick_4", "ordinal": 15, "side": "blue", "action": "pick", "count": 1}
+    ]
+  },
   "drafts": [
     {
       "series": "Team Vamos vs Team Falcons MENA",
