@@ -281,6 +281,33 @@ def test_ui_serves_reviewed_drafts(tmp_path: Path):
             ["Bruno"],
         ]
 
+        for draft in payload["drafts"]:
+            assert draft["ordering"]["direction"] == "side_to_middle"
+            assert draft["ordering"]["frame_stage"] == "pre_swap"
+            assert len(draft["red"]["bans"]) == 5
+            assert len(draft["blue"]["bans"]) == 5
+            assert len(draft["red"]["picks"]) == 5
+            assert len(draft["blue"]["picks"]) == 5
+
+            offsets = {
+                "red": {"ban": 0, "pick": 0},
+                "blue": {"ban": 0, "pick": 0},
+            }
+            mapped = []
+            for phase in displayed_sequence["phases"]:
+                pool = draft[phase["side"]][f"{phase['action']}s"]
+                start = offsets[phase["side"]][phase["action"]]
+                heroes = pool[start : start + phase["count"]]
+                offsets[phase["side"]][phase["action"]] += phase["count"]
+                assert len(heroes) == phase["count"]
+                mapped.append(heroes)
+
+            assert mapped[-1] == [draft["last_pick"]["hero"]]
+            assert offsets == {
+                "red": {"ban": 5, "pick": 5},
+                "blue": {"ban": 5, "pick": 5},
+            }
+
 
 def test_evidence_frame_allows_ephemeral_success_without_retained_artifact():
     frame = EvidenceFrame(

@@ -53,6 +53,11 @@
       "requested_seconds": 5890,
       "final": "1:44:01.995",
       "certification": "certified",
+      "ordering": {
+        "direction": "side_to_middle",
+        "frame_stage": "pre_swap",
+        "validation": "frame_reviewed"
+      },
       "red": {
         "team": "Team Falcons MENA",
         "bans": ["Fanny", "Valir", "Hirara", "Hanzo", {"name": "Aulus", "review": true}],
@@ -60,8 +65,8 @@
       },
       "blue": {
         "team": "Team Vamos",
-        "bans": ["Masha", "Baxia", "Hilda", "Atlas", "Clint"],
-        "picks": ["Melissa", "Minotaur", "Esmeralda", "Ling", "Eudora"]
+        "bans": ["Clint", "Atlas", "Hilda", "Baxia", "Masha"],
+        "picks": ["Eudora", "Ling", "Esmeralda", "Minotaur", "Melissa"]
       },
       "last_pick": {"side": "blue", "team": "Team Vamos", "hero": "Melissa"}
     },
@@ -72,6 +77,11 @@
       "requested_seconds": 9180,
       "final": "2:38:40.000",
       "certification": "certified",
+      "ordering": {
+        "direction": "side_to_middle",
+        "frame_stage": "pre_swap",
+        "validation": "frame_reviewed"
+      },
       "red": {
         "team": "Team Falcons PH",
         "bans": ["Hanzo", "Claude", "Fanny", "Hayabusa", {"name": "Yve", "review": true}],
@@ -79,8 +89,8 @@
       },
       "blue": {
         "team": "Guangzhou Gaming",
-        "bans": ["Lunox", "Aurora", "Atlas", "Obsidia", "Hirara"],
-        "picks": ["Nolan", "Zhuxin", "Hilda", "Esmeralda", "Harith"]
+        "bans": ["Hirara", "Obsidia", "Atlas", "Aurora", "Lunox"],
+        "picks": ["Harith", "Esmeralda", "Hilda", "Zhuxin", "Nolan"]
       },
       "last_pick": {"side": "blue", "team": "Guangzhou Gaming", "hero": "Nolan"}
     },
@@ -91,15 +101,20 @@
       "requested_seconds": 11413,
       "final": "3:13:23.570",
       "certification": "certified",
+      "ordering": {
+        "direction": "side_to_middle",
+        "frame_stage": "pre_swap",
+        "validation": "frame_reviewed"
+      },
       "red": {
         "team": "Guangzhou Gaming",
         "bans": ["Martis", "Fanny", "Esmeralda", "Brody", "Franco"],
-        "picks": ["Paquito", "Hirara", "Yve", "Grock", "Claude"]
+        "picks": ["Hirara", "Claude", "Yve", "Paquito", "Grock"]
       },
       "blue": {
         "team": "Team Falcons PH",
-        "bans": ["Uranus", "Barats", "Atlas", "Clint", "Obsidia"],
-        "picks": ["Moskov", "Akai", "Eudora", "Harley", "Sora"]
+        "bans": ["Obsidia", "Clint", "Atlas", "Barats", "Uranus"],
+        "picks": ["Akai", "Eudora", "Harley", "Moskov", "Sora"]
       },
       "last_pick": {"side": "blue", "team": "Team Falcons PH", "hero": "Sora"}
     },
@@ -110,6 +125,11 @@
       "requested_seconds": 14776,
       "final": "4:09:14.000",
       "certification": "certified",
+      "ordering": {
+        "direction": "side_to_middle",
+        "frame_stage": "pre_swap",
+        "validation": "frame_reviewed"
+      },
       "red": {
         "team": "Team Vitality",
         "bans": ["Valir", "Zhuxin", "Guinevere", "Esmeralda", "Uranus"],
@@ -117,8 +137,8 @@
       },
       "blue": {
         "team": "True Rippers",
-        "bans": ["Leomord", "Masha", "Clint", "Hirara", "Obsidia"],
-        "picks": ["Badang", "Alice", "Karrie", "Ling", "Eudora"]
+        "bans": ["Obsidia", "Hirara", "Clint", "Masha", "Leomord"],
+        "picks": ["Eudora", "Ling", "Karrie", "Alice", "Badang"]
       },
       "last_pick": {"side": "blue", "team": "True Rippers", "hero": "Badang"}
     },
@@ -129,15 +149,20 @@
       "requested_seconds": 16680,
       "final": "4:42:07.193",
       "certification": "certified",
+      "ordering": {
+        "direction": "side_to_middle",
+        "frame_stage": "pre_swap",
+        "validation": "frame_reviewed"
+      },
       "red": {
         "team": "True Rippers",
         "bans": ["Clint", "Ling", "Martis", "Claude", "Karrie"],
-        "picks": ["Uranus", "Yi Sun-Shin", "Gord", "Atlas", "Moskov"]
+        "picks": ["Atlas", "Uranus", "Yi Sun-Shin", "Moskov", "Gord"]
       },
       "blue": {
         "team": "Team Vitality",
-        "bans": ["Zhuxin", "Aurora", "Esmeralda", "Obsidia", "Guinevere"],
-        "picks": ["Harith", "Chou", "Selena", "Hirara", "Belerick"]
+        "bans": ["Guinevere", "Obsidia", "Esmeralda", "Aurora", "Zhuxin"],
+        "picks": ["Selena", "Hirara", "Belerick", "Harith", "Chou"]
       },
       "last_pick": {"side": "blue", "team": "Team Vitality", "hero": "Chou"}
     },
@@ -148,6 +173,11 @@
       "requested_seconds": 20280,
       "final": "≈5:42:00",
       "certification": "manual",
+      "ordering": {
+        "direction": "side_to_middle",
+        "frame_stage": "pre_swap",
+        "validation": "frame_reviewed"
+      },
       "red": {
         "team": "Team Spirit",
         "bans": ["Valir", "Atlas", "Aurora", "Melissa", "Brody"],
@@ -155,8 +185,8 @@
       },
       "blue": {
         "team": "Ignite Gaming",
-        "bans": [{"name": "Aulus", "review": true}, "Hanzo", "Hirara", "Fanny", "Obsidia"],
-        "picks": ["Moskov", "Uranus", "Suyou", "Chou", "Valentina"]
+        "bans": ["Obsidia", "Fanny", "Hirara", "Hanzo", {"name": "Aulus", "review": true}],
+        "picks": ["Valentina", "Chou", "Suyou", "Uranus", "Moskov"]
       },
       "last_pick": {"side": "blue", "team": "Ignite Gaming", "hero": "Moskov"}
     },
@@ -167,6 +197,11 @@
       "requested_seconds": 22380,
       "final": "6:15:37.153",
       "certification": "certified",
+      "ordering": {
+        "direction": "side_to_middle",
+        "frame_stage": "pre_swap",
+        "validation": "frame_reviewed"
+      },
       "red": {
         "team": "Ignite Gaming",
         "bans": ["Valir", "Fanny", "Clint", "Bane", "Leomord"],
@@ -174,8 +209,8 @@
       },
       "blue": {
         "team": "Team Spirit",
-        "bans": ["Uranus", "Esmeralda", "Hanzo", "Atlas", "Aurora"],
-        "picks": ["Chou", "Barats", "Hirara", "Freya", "Zhuxin"]
+        "bans": ["Aurora", "Atlas", "Hanzo", "Esmeralda", "Uranus"],
+        "picks": ["Zhuxin", "Freya", "Hirara", "Barats", "Chou"]
       },
       "last_pick": {"side": "blue", "team": "Team Spirit", "hero": "Chou"}
     }

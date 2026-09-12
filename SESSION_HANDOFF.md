@@ -49,9 +49,16 @@ broadcast, using the supplied Day 1 VOD:
   selected evidence, nearby alternatives, and final slot crops survive for 30
   days; failed-job intermediates are removed.
 - Added reusable fixture runner: `scripts/run_fixture.py`.
+- Added a static draft board for all eight requested Day 1 drafts, with hero
+  portraits, compact five-hero rows, the configured 15-phase sequence, and
+  direct VOD links.
+- Stored every reviewed draft from each team's outer side toward the centre in
+  the last picking states before `ADJUST`. Game 1 is user-confirmed; Games 2–8
+  were checked against retained or locally extracted broadcast frames. This
+  lets the UI populate every phase without using post-swap player positions.
 - Added a decision-complete plan in `docs/TECHNICAL_PLAN.md`, operational setup
   in `README.md`, and focused fixture/boundary inspection scripts.
-- The final suite has 21 passing tests, including real-layout screenshot
+- The final suite has 22 passing tests, including real-layout screenshot
   fixtures, 720p normalization, side attribution, all ten picks, timer/transition
   detection, swap completeness gates, and non-invention of phase membership.
 
@@ -88,14 +95,15 @@ serialized result is `.data/fixture-validation/latest.json` (gitignored).
 - Last phase: blue; last hero: Badang; exact singleton membership known
 - Bans: 0/10 confirmed, so overall swap validation is false and the game is
   correctly `partial`
-- Earlier phases: left unresolved because player-order slots cannot establish
-  chronology
+- Earlier phases: unresolved in the generic extractor result; the separate
+  reviewed draft-board dataset reconstructs them from the event's pre-swap
+  side-to-centre convention
 - Retained storage after pruning: about 16 MB and 27 files for the run
 - Measured full local 1080p fixture runtime: about three minutes
 
 Final fast verification:
 
-- `pytest`: 21 passed (69% measured statement coverage)
+- `pytest`: 22 passed
 - `compileall`: passed
 - `pip check`: no broken requirements
 
@@ -117,6 +125,9 @@ remain; they do not affect runtime behavior.
   events support it.
 - Post-swap slots are player order, not phase order. They establish final sets
   but are never sliced into invented chronological phase membership.
+- The complete timeline shown by the static draft board is a reviewed,
+  event-specific reconstruction from pre-swap slots. It is not yet emitted
+  automatically by the generic extractor.
 - The full seven-hour VOD is downloaded at up to 720p for a production API run,
   then removed after success or failure. Disk and processing time remain an MVP
   operational cost.
@@ -162,5 +173,5 @@ What needed correction during the session:
    sampling behavior.
 5. Resolve or document the single unavailable official Chang'e reference asset
    if it remains absent on refresh.
-6. Initialize/repair Git metadata outside the restricted sandbox if this folder
-   is meant to become a working clone, then review and commit the repository.
+6. Persist frame-level phase events so the generic extractor can reproduce and
+   verify the static board's full timeline without manual slot-order review.

@@ -70,6 +70,13 @@ endpoint, and a one-hero final-set difference agree. This is a phase interval,
 not a frame-perfect click timestamp. Earlier phase membership remains
 unresolved unless separate lock evidence proves it.
 
+The reviewed Day 1 draft-board dataset applies an event-specific broadcast
+convention supplied by the user: before `ADJUST`, each side's slots are read
+from the outer edge toward the centre and sliced by the configured phase
+counts. Those reviewed arrays populate all 15 timeline phases in the UI. This
+does not change the production extractor's conservative rule for an arbitrary
+unreviewed post-swap frame.
+
 See [docs/TECHNICAL_PLAN.md](docs/TECHNICAL_PLAN.md) for component ownership,
 contracts, defaults, error behavior, and evaluation criteria. See
 [SESSION_HANDOFF.md](SESSION_HANDOFF.md) for the current calibration and

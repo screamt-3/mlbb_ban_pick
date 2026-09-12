@@ -150,8 +150,13 @@ function renderSequence(draft) {
   const configuredPhases = [...rules.phases].sort((a, b) => a.ordinal - b.ordinal);
   const phases = mapHeroesToPhases(configuredPhases, draft);
   const lastPickPhase = [...phases].reverse().find((phase) => phase.action === "pick");
-  elements.sequenceNote.textContent = draft.ordering?.validation === "user_confirmed"
-    ? "Hero batches are populated from the user-confirmed pre-swap order, reading from each team’s outer side toward the centre."
+  const hasPreSwapOrder = draft.ordering?.direction === "side_to_middle"
+    && draft.ordering?.frame_stage === "pre_swap";
+  const orderSource = draft.ordering?.validation === "user_confirmed"
+    ? "user-confirmed"
+    : "frame-reviewed";
+  elements.sequenceNote.textContent = hasPreSwapOrder
+    ? `Hero batches are populated from the ${orderSource} pre-swap order, reading from each team’s outer side toward the centre.`
     : "The rules establish team, action, and batch size. Hero batches will be populated after the pre-swap side-to-centre order is confirmed; only the observed last lock is named for now.";
   elements.sequence.innerHTML = sequenceGroups.map((group) => {
     const groupPhases = phases.filter((phase) => phase.ordinal >= group.start && phase.ordinal <= group.end);
