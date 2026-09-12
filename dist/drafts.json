@@ -1,0 +1,157 @@
+{
+  "source_url": "https://www.youtube.com/watch?v=Ew_-LE64e4w",
+  "drafts": [
+    {
+      "series": "Team Vamos vs Team Falcons MENA",
+      "game": 1,
+      "requested": "1:03:00",
+      "requested_seconds": 3780,
+      "final": "1:10:26.189",
+      "certification": "certified",
+      "red": {
+        "team": "Team Vamos",
+        "bans": ["Clint", "Valir", "Zhuxin", "Masha", "Hanzo"],
+        "picks": ["Lapu-Lapu", "Guinevere", "Eudora", "Atlas", "Claude"]
+      },
+      "blue": {
+        "team": "Team Falcons MENA",
+        "bans": ["Paquito", {"name": "Suyou", "review": true}, "Hirara", "Obsidia", "Fanny"],
+        "picks": ["Bruno", "Chou", "Valentina", "Akai", "Arlott"]
+      },
+      "last_pick": {"side": "blue", "team": "Team Falcons MENA", "hero": "Bruno"}
+    },
+    {
+      "series": "Team Falcons MENA vs Team Vamos",
+      "game": 2,
+      "requested": "1:38:10",
+      "requested_seconds": 5890,
+      "final": "1:44:01.995",
+      "certification": "certified",
+      "red": {
+        "team": "Team Falcons MENA",
+        "bans": ["Fanny", "Valir", "Hirara", "Hanzo", {"name": "Aulus", "review": true}],
+        "picks": ["Freya", "Chou", "Valentina", "Alice", "Harley"]
+      },
+      "blue": {
+        "team": "Team Vamos",
+        "bans": ["Masha", "Baxia", "Hilda", "Atlas", "Clint"],
+        "picks": ["Melissa", "Minotaur", "Esmeralda", "Ling", "Eudora"]
+      },
+      "last_pick": {"side": "blue", "team": "Team Vamos", "hero": "Melissa"}
+    },
+    {
+      "series": "Team Falcons PH vs Guangzhou Gaming",
+      "game": 1,
+      "requested": "2:33:00",
+      "requested_seconds": 9180,
+      "final": "2:38:40.000",
+      "certification": "certified",
+      "red": {
+        "team": "Team Falcons PH",
+        "bans": ["Hanzo", "Claude", "Fanny", "Hayabusa", {"name": "Yve", "review": true}],
+        "picks": ["Ling", "Dyrroth", "Brody", "Gloo", "Lylia"]
+      },
+      "blue": {
+        "team": "Guangzhou Gaming",
+        "bans": ["Lunox", "Aurora", "Atlas", "Obsidia", "Hirara"],
+        "picks": ["Nolan", "Zhuxin", "Hilda", "Esmeralda", "Harith"]
+      },
+      "last_pick": {"side": "blue", "team": "Guangzhou Gaming", "hero": "Nolan"}
+    },
+    {
+      "series": "Guangzhou Gaming vs Team Falcons PH",
+      "game": 2,
+      "requested": "3:10:13",
+      "requested_seconds": 11413,
+      "final": "3:13:23.570",
+      "certification": "certified",
+      "red": {
+        "team": "Guangzhou Gaming",
+        "bans": ["Martis", "Fanny", "Esmeralda", "Brody", "Franco"],
+        "picks": ["Paquito", "Hirara", "Yve", "Grock", "Claude"]
+      },
+      "blue": {
+        "team": "Team Falcons PH",
+        "bans": ["Uranus", "Barats", "Atlas", "Clint", "Obsidia"],
+        "picks": ["Moskov", "Akai", "Eudora", "Harley", "Sora"]
+      },
+      "last_pick": {"side": "blue", "team": "Team Falcons PH", "hero": "Sora"}
+    },
+    {
+      "series": "Team Vitality vs True Rippers",
+      "game": 1,
+      "requested": "4:06:16",
+      "requested_seconds": 14776,
+      "final": "4:09:14.000",
+      "certification": "certified",
+      "red": {
+        "team": "Team Vitality",
+        "bans": ["Valir", "Zhuxin", "Guinevere", "Esmeralda", "Uranus"],
+        "picks": ["Atlas", "Akai", "Valentina", "Paquito", "Claude"]
+      },
+      "blue": {
+        "team": "True Rippers",
+        "bans": ["Leomord", "Masha", "Clint", "Hirara", "Obsidia"],
+        "picks": ["Badang", "Alice", "Karrie", "Ling", "Eudora"]
+      },
+      "last_pick": {"side": "blue", "team": "True Rippers", "hero": "Badang"}
+    },
+    {
+      "series": "True Rippers vs Team Vitality",
+      "game": 2,
+      "requested": "4:38:00",
+      "requested_seconds": 16680,
+      "final": "4:42:07.193",
+      "certification": "certified",
+      "red": {
+        "team": "True Rippers",
+        "bans": ["Clint", "Ling", "Martis", "Claude", "Karrie"],
+        "picks": ["Uranus", "Yi Sun-Shin", "Gord", "Atlas", "Moskov"]
+      },
+      "blue": {
+        "team": "Team Vitality",
+        "bans": ["Zhuxin", "Aurora", "Esmeralda", "Obsidia", "Guinevere"],
+        "picks": ["Harith", "Chou", "Selena", "Hirara", "Belerick"]
+      },
+      "last_pick": {"side": "blue", "team": "Team Vitality", "hero": "Chou"}
+    },
+    {
+      "series": "Team Spirit vs Ignite Gaming",
+      "game": 1,
+      "requested": "5:38:00",
+      "requested_seconds": 20280,
+      "final": "≈5:42:00",
+      "certification": "manual",
+      "red": {
+        "team": "Team Spirit",
+        "bans": ["Valir", "Atlas", "Aurora", "Melissa", "Brody"],
+        "picks": ["Ling", "Zhuxin", "Paquito", "Esmeralda", "Minotaur"]
+      },
+      "blue": {
+        "team": "Ignite Gaming",
+        "bans": [{"name": "Aulus", "review": true}, "Hanzo", "Hirara", "Fanny", "Obsidia"],
+        "picks": ["Moskov", "Uranus", "Suyou", "Chou", "Valentina"]
+      },
+      "last_pick": {"side": "blue", "team": "Ignite Gaming", "hero": "Moskov"}
+    },
+    {
+      "series": "Ignite Gaming vs Team Spirit",
+      "game": 2,
+      "requested": "6:13:00",
+      "requested_seconds": 22380,
+      "final": "6:15:37.153",
+      "certification": "certified",
+      "red": {
+        "team": "Ignite Gaming",
+        "bans": ["Valir", "Fanny", "Clint", "Bane", "Leomord"],
+        "picks": ["Ling", "Brody", "Gloo", "Lylia", "Alice"]
+      },
+      "blue": {
+        "team": "Team Spirit",
+        "bans": ["Uranus", "Esmeralda", "Hanzo", "Atlas", "Aurora"],
+        "picks": ["Chou", "Barats", "Hirara", "Freya", "Zhuxin"]
+      },
+      "last_pick": {"side": "blue", "team": "Team Spirit", "hero": "Chou"}
+    }
+  ]
+}

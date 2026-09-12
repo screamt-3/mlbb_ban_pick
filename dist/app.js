@@ -1,0 +1,145 @@
+const state = { drafts: [], index: 0, sourceUrl: "" };
+
+const elements = {
+  view: document.querySelector("#draft-view"),
+  select: document.querySelector("#draft-select"),
+  previous: document.querySelector("#previous-draft"),
+  next: document.querySelector("#next-draft"),
+  vod: document.querySelector("#vod-link"),
+  draftCount: document.querySelector("#draft-count"),
+  pickCount: document.querySelector("#pick-count"),
+  banCount: document.querySelector("#ban-count"),
+};
+
+const imageExtensions = new Map([
+  ["arlott", "webp"],
+  ["nolan", "webp"],
+  ["sora", "webp"],
+  ["suyou", "webp"],
+  ["zhuxin", "webp"],
+]);
+
+function heroId(name) {
+  return name.toLowerCase().replace(/\./g, "-").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+function heroImage(name) {
+  const id = heroId(name);
+  return `./hero-assets/${id}.${imageExtensions.get(id) || "jpg"}`;
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function banCard(hero) {
+  const item = typeof hero === "string" ? { name: hero } : hero;
+  const marker = item.review
+    ? '<span class="review-marker" title="Needs an independent portrait check" aria-label="Needs an independent portrait check">?</span>'
+    : "";
+  return `<figure class="hero-card ban-card">
+    <img src="${heroImage(item.name)}" alt="" loading="lazy">
+    ${marker}
+    <figcaption>${escapeHtml(item.name)}</figcaption>
+  </figure>`;
+}
+
+function pickCard(name, index, lastPick) {
+  const isLast = name === lastPick;
+  return `<figure class="hero-card pick-card${isLast ? " is-last" : ""}">
+    <img src="${heroImage(name)}" alt="" loading="lazy">
+    <span class="pick-number">${index + 1}</span>
+    ${isLast ? '<span class="last-ribbon">LAST LOCK</span>' : ""}
+    <figcaption>${escapeHtml(name)}</figcaption>
+  </figure>`;
+}
+
+function sidePanel(side, draft) {
+  const team = draft[side];
+  const lastPick = draft.last_pick.side === side ? draft.last_pick.hero : null;
+  return `<article class="side-panel ${side}-panel">
+    <header class="team-heading">
+      <div>
+        <p class="side-kicker">${side} side</p>
+        <h2>${escapeHtml(team.team)}</h2>
+      </div>
+      <span class="side-chip">${side.toUpperCase()}</span>
+    </header>
+    <p class="section-label">Bans</p>
+    <div class="ban-list">${team.bans.map(banCard).join("")}</div>
+    <p class="section-label">Final picks</p>
+    <div class="pick-grid">${team.picks.map((hero, index) => pickCard(hero, index, lastPick)).join("")}</div>
+  </article>`;
+}
+
+function render() {
+  const draft = state.drafts[state.index];
+  if (!draft) return;
+
+  elements.select.value = String(state.index);
+  const statusClass = draft.certification === "manual" ? " manual" : "";
+  const statusText = draft.certification === "manual" ? "Visual check" : "Timer certified";
+  const sourceSeconds = draft.requested_seconds;
+  elements.vod.href = `${state.sourceUrl}&t=${sourceSeconds}s`;
+
+  elements.view.innerHTML = `${sidePanel("red", draft)}
+    <aside class="versus" aria-label="Draft details">
+      <p class="game-number">Game ${draft.game}</p>
+      <p class="versus-mark">VS</p>
+      <div class="last-pick">
+        <p class="last-label">Last pick</p>
+        <strong>${escapeHtml(draft.last_pick.hero)}</strong>
+        <span>${escapeHtml(draft.last_pick.team)}</span>
+      </div>
+      <p class="timestamp">Requested<br><strong>${escapeHtml(draft.requested)}</strong><br><br>Final<br><strong>${escapeHtml(draft.final)}</strong></p>
+      <span class="status-chip${statusClass}">${statusText}</span>
+    </aside>
+    ${sidePanel("blue", draft)}`;
+}
+
+function move(offset) {
+  state.index = (state.index + offset + state.drafts.length) % state.drafts.length;
+  render();
+}
+
+async function loadDrafts() {
+  try {
+    const response = await fetch("./drafts.json");
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+    state.drafts = data.drafts;
+    state.sourceUrl = data.source_url;
+
+    elements.draftCount.textContent = state.drafts.length;
+    elements.pickCount.textContent = state.drafts.reduce((total, draft) => total + draft.red.picks.length + draft.blue.picks.length, 0);
+    elements.banCount.textContent = state.drafts.reduce((total, draft) => total + draft.red.bans.length + draft.blue.bans.length, 0);
+    elements.select.replaceChildren(...state.drafts.map((draft, index) => {
+      const option = document.createElement("option");
+      option.value = String(index);
+      option.textContent = `${draft.series} · Game ${draft.game}`;
+      return option;
+    }));
+    render();
+  } catch (error) {
+    elements.view.innerHTML = `<p class="error-state">Could not load draft data: ${escapeHtml(error.message)}</p>`;
+  }
+}
+
+elements.previous.addEventListener("click", () => move(-1));
+elements.next.addEventListener("click", () => move(1));
+elements.select.addEventListener("change", (event) => {
+  state.index = Number(event.target.value);
+  render();
+});
+document.addEventListener("keydown", (event) => {
+  if (event.target.matches("select")) return;
+  if (event.key === "ArrowLeft") move(-1);
+  if (event.key === "ArrowRight") move(1);
+});
+
+loadDrafts();

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from datetime import datetime, timezone
 from pathlib import Path
 from uuid import uuid4
@@ -195,6 +196,19 @@ def test_api_rejects_bad_url_and_unknown_layout(tmp_path: Path):
         )
         assert missing_layout.status_code == 422
         assert client.get("/healthz").json() == {"status": "ok"}
+
+
+def test_ui_serves_reviewed_drafts(tmp_path: Path):
+    app = create_app(project_root=ROOT, data_root=tmp_path, run_jobs_inline=False)
+    with TestClient(app) as client:
+        page = client.get("/")
+        assert page.status_code == 200
+        assert "MLBB Draft Board" in page.text
+        drafts = client.get("/ui/drafts.json")
+        assert drafts.status_code == 200
+        payload = json.loads(drafts.text)
+        assert len(payload["drafts"]) == 8
+        assert payload["drafts"][0]["last_pick"]["hero"] == "Bruno"
 
 
 def test_evidence_frame_allows_ephemeral_success_without_retained_artifact():

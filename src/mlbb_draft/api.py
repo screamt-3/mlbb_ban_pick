@@ -6,7 +6,8 @@ from pathlib import Path
 from uuid import UUID
 
 from fastapi import FastAPI, HTTPException, status
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, RedirectResponse
+from fastapi.staticfiles import StaticFiles
 
 from .artifacts import ArtifactNotFoundError, LocalArtifactStore
 from .config import ConfigRegistry
@@ -59,6 +60,14 @@ def create_app(
     app.state.artifact_store = artifacts
     app.state.pipeline = pipeline
     app.state.runner = runner
+
+    ui_root = project_root / "dist"
+    if ui_root.is_dir():
+        app.mount("/ui", StaticFiles(directory=ui_root, html=True), name="ui")
+
+        @app.get("/", include_in_schema=False)
+        def open_ui() -> RedirectResponse:
+            return RedirectResponse(url="/ui/")
 
     @app.get("/healthz")
     def health() -> dict[str, str]:

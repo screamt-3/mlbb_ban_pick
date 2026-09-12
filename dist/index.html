@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Review extracted Mobile Legends bans, picks, sides, and final locks from MSC at EWC 2026.">
+    <title>MLBB Draft Board</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">M</span>
+          <div>
+            <p>MSC · EWC 2026</p>
+            <h1>Draft Board</h1>
+          </div>
+        </div>
+        <div class="summary" aria-label="Dataset summary">
+          <span><strong id="draft-count">—</strong> drafts</span>
+          <span><strong id="pick-count">—</strong> picks</span>
+          <span><strong id="ban-count">—</strong> bans</span>
+        </div>
+      </header>
+
+      <section class="toolbar" aria-label="Draft navigation">
+        <button class="nav-button" id="previous-draft" type="button" aria-label="Previous draft">←</button>
+        <label class="draft-selector">
+          <span>Match</span>
+          <select id="draft-select" aria-label="Choose a draft"></select>
+        </label>
+        <button class="nav-button" id="next-draft" type="button" aria-label="Next draft">→</button>
+        <a class="vod-link" id="vod-link" href="#" target="_blank" rel="noreferrer">Open VOD ↗</a>
+      </section>
+
+      <section id="draft-view" class="draft-view" aria-live="polite">
+        <p class="loading-state">Loading draft…</p>
+      </section>
+
+      <footer class="footer-note">
+        <span><i class="confidence-dot confirmed"></i> Printed HUD label</span>
+        <span><i class="confidence-dot reviewed"></i> Visual portrait match</span>
+        <span><i class="confidence-dot check"></i> Needs second check</span>
+        <span>Pick rows show final player assignment, not chronological order.</span>
+      </footer>
+    </main>
+    <script src="./app.js" defer></script>
+  </body>
+</html>

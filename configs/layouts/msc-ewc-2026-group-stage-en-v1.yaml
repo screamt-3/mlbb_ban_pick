@@ -24,7 +24,7 @@ anchors:
   - anchor_id: flying_cloud
     roi: {x: 870, y: 786, width: 180, height: 32}
     template_asset: assets/layouts/msc-ewc-2026-group-stage-en-v1/flying-cloud.png
-    required: true
+    required: false
     minimum_score: 0.78
     weight: 0.8
 team_regions:

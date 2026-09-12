@@ -105,6 +105,10 @@ To start the local API:
 It binds to `127.0.0.1:8000` by default. Set `MLBB_DRAFT_DATA_DIR` to place the
 SQLite database and retained artifacts somewhere other than `.data/`.
 
+Open `http://127.0.0.1:8000/` to use the draft board. It includes the eight
+manually reviewed MSC at EWC 2026 Day 1 drafts, side-by-side bans and picks,
+direct VOD links, confidence markers, and the last chronological pick.
+
 ## API
 
 Create an asynchronous analysis:
