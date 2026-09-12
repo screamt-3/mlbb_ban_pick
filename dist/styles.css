@@ -197,6 +197,13 @@ button, select { font: inherit; }
 .blue-panel .side-chip { color: var(--blue); background: var(--blue-soft); }
 
 .section-label { margin-bottom: 10px; }
+.order-hint {
+  float: right;
+  color: var(--text);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
 .ban-list {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -381,7 +388,7 @@ button, select { font: inherit; }
 .sequence-step {
   position: relative;
   min-width: 0;
-  min-height: 106px;
+  min-height: 124px;
   padding: 11px 12px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -405,11 +412,18 @@ button, select { font: inherit; }
   white-space: nowrap;
 }
 .sequence-side { display: block; margin-top: 4px; color: var(--muted); font-size: 0.75rem; text-transform: capitalize; }
-.sequence-last-lock { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding-top: 9px; border-top: 1px solid var(--line); }
-.sequence-last-lock img { width: 40px; height: 40px; border-radius: 7px; object-fit: cover; object-position: 50% 20%; }
-.sequence-last-lock span { min-width: 0; }
-.sequence-last-lock small { display: block; color: var(--blue); font-size: 0.75rem; font-weight: 800; }
-.sequence-last-lock strong { display: block; margin-top: 2px; overflow: hidden; font-size: 0.875rem; text-overflow: ellipsis; white-space: nowrap; }
+.sequence-heroes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 9px;
+  border-top: 1px solid var(--line);
+}
+.last-lock-label { grid-column: 1 / -1; color: var(--blue); font-size: 0.75rem; font-weight: 800; }
+.sequence-hero { display: flex; min-width: 0; align-items: center; gap: 6px; }
+.sequence-hero img { width: 34px; height: 34px; flex: 0 0 auto; border-radius: 6px; object-fit: cover; object-position: 50% 20%; }
+.sequence-hero strong { overflow: hidden; font-size: 0.8rem; text-overflow: ellipsis; white-space: nowrap; }
 .sequence-note { margin: 16px 0 0 122px; color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
 
 .footer-note {

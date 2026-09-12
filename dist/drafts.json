@@ -29,15 +29,20 @@
       "requested_seconds": 3780,
       "final": "1:10:26.189",
       "certification": "certified",
+      "ordering": {
+        "direction": "side_to_middle",
+        "frame_stage": "pre_swap",
+        "validation": "user_confirmed"
+      },
       "red": {
         "team": "Team Vamos",
-        "bans": ["Clint", "Valir", "Zhuxin", "Masha", "Hanzo"],
-        "picks": ["Lapu-Lapu", "Guinevere", "Eudora", "Atlas", "Claude"]
+        "bans": ["Marcel", "Phoveus", "Zhuxin", "Moskov", "Belerick"],
+        "picks": ["Atlas", "Guinevere", "Eudora", "Lapu-Lapu", "Claude"]
       },
       "blue": {
         "team": "Team Falcons MENA",
-        "bans": ["Paquito", {"name": "Suyou", "review": true}, "Hirara", "Obsidia", "Fanny"],
-        "picks": ["Bruno", "Chou", "Valentina", "Akai", "Arlott"]
+        "bans": ["Fanny", "Freya", "Hirara", "Yu Zhong", "Paquito"],
+        "picks": ["Valentina", "Arlott", "Akai", "Chou", "Bruno"]
       },
       "last_pick": {"side": "blue", "team": "Team Falcons MENA", "hero": "Bruno"}
     },

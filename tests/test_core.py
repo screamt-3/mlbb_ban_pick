@@ -120,6 +120,23 @@ def test_config_registry_loads_and_validates_counts():
     assert sum(phase.count for phase in rules.phases) == 20
     assert layout_ref.config_sha256
     assert rules_ref.validation_status == "provisional"
+    for action in ("ban", "pick"):
+        red_x = [
+            slot.roi.x
+            for slot in sorted(
+                (slot for slot in layout.slots if slot.side == "red" and slot.action == action),
+                key=lambda slot: slot.visible_order,
+            )
+        ]
+        blue_x = [
+            slot.roi.x
+            for slot in sorted(
+                (slot for slot in layout.slots if slot.side == "blue" and slot.action == action),
+                key=lambda slot: slot.visible_order,
+            )
+        ]
+        assert red_x == sorted(red_x)
+        assert blue_x == sorted(blue_x, reverse=True)
 
 
 def test_youtube_provider_normalizes_supported_urls():
@@ -208,7 +225,25 @@ def test_ui_serves_reviewed_drafts(tmp_path: Path):
         assert drafts.status_code == 200
         payload = json.loads(drafts.text)
         assert len(payload["drafts"]) == 8
-        assert payload["drafts"][0]["last_pick"]["hero"] == "Bruno"
+        game_one = payload["drafts"][0]
+        assert game_one["last_pick"]["hero"] == "Bruno"
+        assert game_one["ordering"] == {
+            "direction": "side_to_middle",
+            "frame_stage": "pre_swap",
+            "validation": "user_confirmed",
+        }
+        assert game_one["red"]["bans"] == [
+            "Marcel", "Phoveus", "Zhuxin", "Moskov", "Belerick"
+        ]
+        assert game_one["red"]["picks"] == [
+            "Atlas", "Guinevere", "Eudora", "Lapu-Lapu", "Claude"
+        ]
+        assert game_one["blue"]["bans"] == [
+            "Fanny", "Freya", "Hirara", "Yu Zhong", "Paquito"
+        ]
+        assert game_one["blue"]["picks"] == [
+            "Valentina", "Arlott", "Akai", "Chou", "Bruno"
+        ]
         rules, _ = ConfigRegistry(ROOT / "configs").load_rules(
             "msc-ewc-2026-draft-sequence-v1"
         )
@@ -220,6 +255,30 @@ def test_ui_serves_reviewed_drafts(tmp_path: Path):
         ] == [
             (phase.ordinal, phase.side, phase.action, phase.count)
             for phase in rules.phases
+        ]
+        offsets = {"red": {"ban": 0, "pick": 0}, "blue": {"ban": 0, "pick": 0}}
+        phase_heroes = []
+        for phase in displayed_sequence["phases"]:
+            pool = game_one[phase["side"]][f"{phase['action']}s"]
+            start = offsets[phase["side"]][phase["action"]]
+            phase_heroes.append(pool[start : start + phase["count"]])
+            offsets[phase["side"]][phase["action"]] += phase["count"]
+        assert phase_heroes == [
+            ["Marcel"],
+            ["Fanny", "Freya"],
+            ["Phoveus", "Zhuxin"],
+            ["Hirara"],
+            ["Atlas"],
+            ["Valentina", "Arlott"],
+            ["Guinevere", "Eudora"],
+            ["Akai"],
+            ["Yu Zhong"],
+            ["Moskov"],
+            ["Paquito"],
+            ["Belerick"],
+            ["Chou"],
+            ["Lapu-Lapu", "Claude"],
+            ["Bruno"],
         ]
 
 

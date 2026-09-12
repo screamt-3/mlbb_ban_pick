@@ -1,7 +1,7 @@
 schema_version: "1.0"
 layout_id: msc-ewc-2026-group-stage-en-v1
 version: "1"
-description: MSC at EWC 2026 Group Stage English main broadcast draft HUD
+description: MSC at EWC 2026 Group Stage English main broadcast draft HUD; slots ordered from team side toward centre
 canonical_frame:
   width: 1920
   height: 1080
@@ -114,14 +114,14 @@ slots:
     side: blue
     action: pick
     visible_order: 1
-    roi: {x: 1090, y: 790, width: 165, height: 205}
-    hero_name_roi: {x: 1090, y: 976, width: 165, height: 19}
+    roi: {x: 1750, y: 790, width: 170, height: 205}
+    hero_name_roi: {x: 1750, y: 976, width: 170, height: 19}
   - slot_id: blue_pick_2
     side: blue
     action: pick
     visible_order: 2
-    roi: {x: 1255, y: 790, width: 165, height: 205}
-    hero_name_roi: {x: 1255, y: 976, width: 165, height: 19}
+    roi: {x: 1585, y: 790, width: 165, height: 205}
+    hero_name_roi: {x: 1585, y: 976, width: 165, height: 19}
   - slot_id: blue_pick_3
     side: blue
     action: pick
@@ -132,21 +132,21 @@ slots:
     side: blue
     action: pick
     visible_order: 4
-    roi: {x: 1585, y: 790, width: 165, height: 205}
-    hero_name_roi: {x: 1585, y: 976, width: 165, height: 19}
+    roi: {x: 1255, y: 790, width: 165, height: 205}
+    hero_name_roi: {x: 1255, y: 976, width: 165, height: 19}
   - slot_id: blue_pick_5
     side: blue
     action: pick
     visible_order: 5
-    roi: {x: 1750, y: 790, width: 170, height: 205}
-    hero_name_roi: {x: 1750, y: 976, width: 170, height: 19}
+    roi: {x: 1090, y: 790, width: 165, height: 205}
+    hero_name_roi: {x: 1090, y: 976, width: 165, height: 19}
   - {slot_id: red_ban_1, side: red, action: ban, visible_order: 1, roi: {x: 12, y: 709, width: 70, height: 70}}
   - {slot_id: red_ban_2, side: red, action: ban, visible_order: 2, roi: {x: 84, y: 709, width: 70, height: 70}}
   - {slot_id: red_ban_3, side: red, action: ban, visible_order: 3, roi: {x: 157, y: 709, width: 70, height: 70}}
   - {slot_id: red_ban_4, side: red, action: ban, visible_order: 4, roi: {x: 230, y: 709, width: 70, height: 70}}
   - {slot_id: red_ban_5, side: red, action: ban, visible_order: 5, roi: {x: 304, y: 709, width: 70, height: 70}}
-  - {slot_id: blue_ban_1, side: blue, action: ban, visible_order: 1, roi: {x: 1545, y: 709, width: 70, height: 70}}
-  - {slot_id: blue_ban_2, side: blue, action: ban, visible_order: 2, roi: {x: 1617, y: 709, width: 70, height: 70}}
+  - {slot_id: blue_ban_1, side: blue, action: ban, visible_order: 1, roi: {x: 1835, y: 709, width: 70, height: 70}}
+  - {slot_id: blue_ban_2, side: blue, action: ban, visible_order: 2, roi: {x: 1762, y: 709, width: 70, height: 70}}
   - {slot_id: blue_ban_3, side: blue, action: ban, visible_order: 3, roi: {x: 1689, y: 709, width: 70, height: 70}}
-  - {slot_id: blue_ban_4, side: blue, action: ban, visible_order: 4, roi: {x: 1762, y: 709, width: 70, height: 70}}
-  - {slot_id: blue_ban_5, side: blue, action: ban, visible_order: 5, roi: {x: 1835, y: 709, width: 70, height: 70}}
+  - {slot_id: blue_ban_4, side: blue, action: ban, visible_order: 4, roi: {x: 1617, y: 709, width: 70, height: 70}}
+  - {slot_id: blue_ban_5, side: blue, action: ban, visible_order: 5, roi: {x: 1545, y: 709, width: 70, height: 70}}

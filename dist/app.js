@@ -10,6 +10,7 @@ const elements = {
   pickCount: document.querySelector("#pick-count"),
   banCount: document.querySelector("#ban-count"),
   sequence: document.querySelector("#draft-sequence"),
+  sequenceNote: document.querySelector("#sequence-note"),
   rulesBadge: document.querySelector("#rules-badge"),
 };
 
@@ -22,6 +23,7 @@ const sequenceGroups = [
 
 const imageExtensions = new Map([
   ["arlott", "webp"],
+  ["marcel", "webp"],
   ["nolan", "webp"],
   ["sora", "webp"],
   ["suyou", "webp"],
@@ -44,6 +46,10 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function heroName(hero) {
+  return typeof hero === "string" ? hero : hero.name;
 }
 
 function banCard(hero) {
@@ -71,6 +77,9 @@ function pickCard(name, index, lastPick) {
 function sidePanel(side, draft) {
   const team = draft[side];
   const lastPick = draft.last_pick.side === side ? draft.last_pick.hero : null;
+  const isSideToMiddle = draft.ordering?.direction === "side_to_middle";
+  const orderHint = isSideToMiddle ? '<span class="order-hint">side → centre</span>' : "";
+  const pickLabel = draft.ordering?.frame_stage === "pre_swap" ? "Pre-swap picks" : "Final picks";
   return `<article class="side-panel ${side}-panel">
     <header class="team-heading">
       <div>
@@ -79,11 +88,28 @@ function sidePanel(side, draft) {
       </div>
       <span class="side-chip">${side.toUpperCase()}</span>
     </header>
-    <p class="section-label">Bans</p>
+    <p class="section-label">Bans ${orderHint}</p>
     <div class="ban-list">${team.bans.map(banCard).join("")}</div>
-    <p class="section-label">Final picks</p>
+    <p class="section-label">${pickLabel} ${orderHint}</p>
     <div class="pick-grid">${team.picks.map((hero, index) => pickCard(hero, index, lastPick)).join("")}</div>
   </article>`;
+}
+
+function mapHeroesToPhases(phases, draft) {
+  if (draft.ordering?.direction !== "side_to_middle" || draft.ordering?.frame_stage !== "pre_swap") {
+    return phases.map((phase) => ({ ...phase, heroes: [] }));
+  }
+
+  const offsets = {
+    red: { ban: 0, pick: 0 },
+    blue: { ban: 0, pick: 0 },
+  };
+  return phases.map((phase) => {
+    const pool = draft[phase.side][`${phase.action}s`].map(heroName);
+    const start = offsets[phase.side][phase.action];
+    offsets[phase.side][phase.action] += phase.count;
+    return { ...phase, heroes: pool.slice(start, start + phase.count) };
+  });
 }
 
 function sequenceCard(phase, draft, lastPickPhase) {
@@ -92,11 +118,14 @@ function sequenceCard(phase, draft, lastPickPhase) {
     && draft.last_pick.side === phase.side;
   const action = phase.action === "ban" ? "Ban" : "Pick";
   const countLabel = `${phase.count} ${phase.count === 1 ? "hero" : "heroes"}`;
-  const hero = isLastLock ? draft.last_pick.hero : null;
-  const lastLock = hero
-    ? `<div class="sequence-last-lock">
-        <img src="${heroImage(hero)}" alt="" loading="lazy">
-        <span><small>Observed last lock</small><strong>${escapeHtml(hero)}</strong></span>
+  const heroes = phase.heroes.length ? phase.heroes : isLastLock ? [draft.last_pick.hero] : [];
+  const heroList = heroes.length
+    ? `<div class="sequence-heroes">
+        ${isLastLock ? '<small class="last-lock-label">Observed last lock</small>' : ""}
+        ${heroes.map((hero) => `<span class="sequence-hero">
+          <img src="${heroImage(hero)}" alt="" loading="lazy">
+          <strong>${escapeHtml(hero)}</strong>
+        </span>`).join("")}
       </div>`
     : "";
 
@@ -107,7 +136,7 @@ function sequenceCard(phase, draft, lastPickPhase) {
     </div>
     <strong class="sequence-team">${escapeHtml(team)}</strong>
     <span class="sequence-side">${phase.side} side</span>
-    ${lastLock}
+    ${heroList}
   </li>`;
 }
 
@@ -118,8 +147,12 @@ function renderSequence(draft) {
     return;
   }
 
-  const phases = [...rules.phases].sort((a, b) => a.ordinal - b.ordinal);
+  const configuredPhases = [...rules.phases].sort((a, b) => a.ordinal - b.ordinal);
+  const phases = mapHeroesToPhases(configuredPhases, draft);
   const lastPickPhase = [...phases].reverse().find((phase) => phase.action === "pick");
+  elements.sequenceNote.textContent = draft.ordering?.validation === "user_confirmed"
+    ? "Hero batches are populated from the user-confirmed pre-swap order, reading from each team’s outer side toward the centre."
+    : "The rules establish team, action, and batch size. Hero batches will be populated after the pre-swap side-to-centre order is confirmed; only the observed last lock is named for now.";
   elements.sequence.innerHTML = sequenceGroups.map((group) => {
     const groupPhases = phases.filter((phase) => phase.ordinal >= group.start && phase.ordinal <= group.end);
     return `<section class="sequence-group" aria-label="${group.label}">

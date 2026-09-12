@@ -7,7 +7,7 @@ Analysed timestamps: `1:03:00`, `1:38:10`, `2:33:00`, `3:10:13`, `4:06:16`, `4:3
 ## Reading the results
 
 - Red is the left side of this broadcast layout; blue is the right side.
-- Ban and pick lists below are the final on-screen left-to-right display order. Pick display order becomes player assignment order after swapping, so it must not be treated as chronological lock order.
+- A confirmed pre-swap list is stored from each team's outer side toward the middle of the screen. This makes consecutive list slices align with the configured draft phases. Lists that have not yet been checked against a pre-swap frame retain their earlier final-screen display order and must not be treated as chronological lock order.
 - `Last pick` is taken from the last one-team `PICKING` state immediately before both middle timers change to the 30-second `ADJUST` state.
 - Pick names and last picks are high-confidence because their names are printed on the HUD. Ban names are visual portrait matches against the repository's MSC 2026 hero catalog. `†` marks the few portrait matches that deserve a second independent check before being used as labelled training truth.
 
@@ -17,10 +17,11 @@ Analysed timestamps: `1:03:00`, `1:38:10`, `2:33:00`, `3:10:13`, `4:06:16`, `4:3
 
 - Requested point: `1:03:00`
 - Certified final composition: `1:10:26.189`
-- Red / Team Vamos bans: Clint, Valir, Zhuxin, Masha, Hanzo
-- Red / Team Vamos picks: Lapu-Lapu, Guinevere, Eudora, Atlas, Claude
-- Blue / Team Falcons MENA bans: Paquito, Suyou†, Hirara, Obsidia, Fanny
-- Blue / Team Falcons MENA picks: Bruno, Chou, Valentina, Akai, Arlott
+- Ordering: user-confirmed pre-swap, from each team's outer side toward the middle
+- Red / Team Vamos bans: Marcel, Phoveus, Zhuxin, Moskov, Belerick
+- Red / Team Vamos picks: Atlas, Guinevere, Eudora, Lapu-Lapu, Claude
+- Blue / Team Falcons MENA bans: Fanny, Freya, Hirara, Yu Zhong, Paquito
+- Blue / Team Falcons MENA picks: Valentina, Arlott, Akai, Chou, Bruno
 - Last pick: Team Falcons MENA (blue) — Bruno
 
 ### 2. Team Falcons MENA vs Team Vamos — Game 2
@@ -126,4 +127,3 @@ Next work:
 - Independently verify the three `†` ban identities before committing them as ground truth fixtures.
 - Add a fixture whose clip includes the complete Team Spirit vs Ignite Game 1 transition so the strict detector can certify it automatically.
 - Persist draft events as state transitions so the complete chronological hero lock sequence can be exported, not only the final composition and last pick.
-
