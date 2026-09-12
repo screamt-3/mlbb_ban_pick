@@ -21,6 +21,25 @@
       {"phase_id": "blue_pick_4", "ordinal": 15, "side": "blue", "action": "pick", "count": 1}
     ]
   },
+  "draft_sequences": {
+    "mpl-id-s18-picks-v1": {
+      "rules_id": "mpl-id-s18-picks-v1",
+      "validation_status": "pick_phases_only",
+      "groups": [
+        {"label": "Opening picks", "start": 1, "end": 4},
+        {"label": "Final picks", "start": 5, "end": 7}
+      ],
+      "phases": [
+        {"phase_id": "blue_pick_1", "ordinal": 1, "side": "blue", "action": "pick", "count": 1},
+        {"phase_id": "red_pick_1", "ordinal": 2, "side": "red", "action": "pick", "count": 2},
+        {"phase_id": "blue_pick_2", "ordinal": 3, "side": "blue", "action": "pick", "count": 2},
+        {"phase_id": "red_pick_2", "ordinal": 4, "side": "red", "action": "pick", "count": 1},
+        {"phase_id": "red_pick_3", "ordinal": 5, "side": "red", "action": "pick", "count": 1},
+        {"phase_id": "blue_pick_3", "ordinal": 6, "side": "blue", "action": "pick", "count": 2},
+        {"phase_id": "red_pick_4", "ordinal": 7, "side": "red", "action": "pick", "count": 1}
+      ]
+    }
+  },
   "drafts": [
     {
       "series": "Team Vamos vs Team Falcons MENA",
@@ -213,6 +232,102 @@
         "picks": ["Zhuxin", "Freya", "Hirara", "Barats", "Chou"]
       },
       "last_pick": {"side": "blue", "team": "Team Spirit", "hero": "Chou"}
+    },
+    {
+      "event": "MPL Indonesia Season 18 · Week 5 Day 2",
+      "source_url": "https://www.youtube.com/watch?v=m_sszsoqymE",
+      "rules_id": "mpl-id-s18-picks-v1",
+      "screen_left": "blue",
+      "series": "Team Liquid ID vs Bigetron by Vitality",
+      "game": 1,
+      "requested": "39:21",
+      "requested_seconds": 2361,
+      "final": "≈46:50",
+      "certification": "picks_verified",
+      "ordering": {"direction": "side_to_middle", "frame_stage": "pre_swap", "validation": "frame_reviewed"},
+      "blue": {"team": "Team Liquid ID", "bans": [], "picks": ["Melissa", "Paquito", "Gloo", "Minotaur", "Zhuxin"]},
+      "red": {"team": "Bigetron by Vitality", "bans": [], "picks": ["Barats", "Selena", "Carmilla", "Clint", "Guinevere"]},
+      "last_pick": {"side": "red", "team": "Bigetron by Vitality", "hero": "Guinevere"}
+    },
+    {
+      "event": "MPL Indonesia Season 18 · Week 5 Day 2",
+      "source_url": "https://www.youtube.com/watch?v=m_sszsoqymE",
+      "rules_id": "mpl-id-s18-picks-v1",
+      "screen_left": "blue",
+      "series": "Bigetron by Vitality vs Team Liquid ID",
+      "game": 2,
+      "requested": "1:17:00",
+      "requested_seconds": 4620,
+      "final": "≈1:24:30",
+      "certification": "picks_verified",
+      "ordering": {"direction": "side_to_middle", "frame_stage": "pre_swap", "validation": "frame_reviewed"},
+      "blue": {"team": "Bigetron by Vitality", "bans": [], "picks": ["Hirara", "Gloo", "Selena", "Hylos", "Granger"]},
+      "red": {"team": "Team Liquid ID", "bans": [], "picks": ["Carmilla", "Paquito", "Minotaur", "Miya", "Rafaela"]},
+      "last_pick": {"side": "red", "team": "Team Liquid ID", "hero": "Rafaela"}
+    },
+    {
+      "event": "MPL Indonesia Season 18 · Week 5 Day 2",
+      "source_url": "https://www.youtube.com/watch?v=m_sszsoqymE",
+      "rules_id": "mpl-id-s18-picks-v1",
+      "screen_left": "blue",
+      "series": "Alter Ego vs RRQ Hoshi",
+      "game": 1,
+      "requested": "3:36:55",
+      "requested_seconds": 13015,
+      "final": "≈3:38:55",
+      "certification": "picks_verified",
+      "ordering": {"direction": "side_to_middle", "frame_stage": "pre_swap", "validation": "frame_reviewed"},
+      "blue": {"team": "Alter Ego", "bans": [], "picks": ["Atlas", "Obsidia", "Eudora", "Gloo", "Nolan"]},
+      "red": {"team": "RRQ Hoshi", "bans": [], "picks": ["Paquito", "Hirara", "Belerick", "Miya", "Angela"]},
+      "last_pick": {"side": "red", "team": "RRQ Hoshi", "hero": "Angela"}
+    },
+    {
+      "event": "MPL Indonesia Season 18 · Week 5 Day 2",
+      "source_url": "https://www.youtube.com/watch?v=m_sszsoqymE",
+      "rules_id": "mpl-id-s18-picks-v1",
+      "screen_left": "blue",
+      "series": "Alter Ego vs RRQ Hoshi",
+      "game": 2,
+      "requested": "4:18:14",
+      "requested_seconds": 15494,
+      "final": "≈4:22:00",
+      "certification": "picks_verified",
+      "ordering": {"direction": "side_to_middle", "frame_stage": "pre_swap", "validation": "frame_reviewed"},
+      "blue": {"team": "Alter Ego", "bans": [], "picks": ["Hirara", "Atlas", "Valentina", "Esmeralda", "Miya"]},
+      "red": {"team": "RRQ Hoshi", "bans": [], "picks": ["Uranus", "Paquito", "Rafaela", "Gatotkaca", "Yi Sun-Shin"]},
+      "last_pick": {"side": "red", "team": "RRQ Hoshi", "hero": "Yi Sun-Shin"}
+    },
+    {
+      "event": "MPL Indonesia Season 18 · Week 5 Day 2",
+      "source_url": "https://www.youtube.com/watch?v=m_sszsoqymE",
+      "rules_id": "mpl-id-s18-picks-v1",
+      "screen_left": "blue",
+      "series": "NAVI vs EVOS",
+      "game": 1,
+      "requested": "6:35:00",
+      "requested_seconds": 23700,
+      "final": "≈6:40:45",
+      "certification": "picks_verified",
+      "ordering": {"direction": "side_to_middle", "frame_stage": "pre_swap", "validation": "frame_reviewed"},
+      "blue": {"team": "NAVI", "bans": [], "picks": ["Hirara", "Gatotkaca", "Selena", "Minotaur", "Miya"]},
+      "red": {"team": "EVOS", "bans": [], "picks": ["Belerick", "Paquito", "Lylia", "Barats", "Obsidia"]},
+      "last_pick": {"side": "red", "team": "EVOS", "hero": "Obsidia"}
+    },
+    {
+      "event": "MPL Indonesia Season 18 · Week 5 Day 2",
+      "source_url": "https://www.youtube.com/watch?v=m_sszsoqymE",
+      "rules_id": "mpl-id-s18-picks-v1",
+      "screen_left": "blue",
+      "series": "EVOS vs NAVI",
+      "game": 2,
+      "requested": "7:21:13",
+      "requested_seconds": 26473,
+      "final": "≈7:27:43",
+      "certification": "picks_verified",
+      "ordering": {"direction": "side_to_middle", "frame_stage": "pre_swap", "validation": "frame_reviewed"},
+      "blue": {"team": "EVOS", "bans": [], "picks": ["Hirara", "Carmilla", "Cecilion", "Esmeralda", "Moskov"]},
+      "red": {"team": "NAVI", "bans": [], "picks": ["Selena", "Paquito", "Gatotkaca", "Obsidia", "Dyrroth"]},
+      "last_pick": {"side": "red", "team": "NAVI", "hero": "Dyrroth"}
     }
   ]
 }

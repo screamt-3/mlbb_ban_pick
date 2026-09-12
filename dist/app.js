@@ -1,4 +1,4 @@
-const state = { drafts: [], draftSequence: null, index: 0, sourceUrl: "" };
+const state = { drafts: [], draftSequence: null, draftSequences: {}, index: 0, sourceUrl: "" };
 
 const elements = {
   view: document.querySelector("#draft-view"),
@@ -12,6 +12,7 @@ const elements = {
   sequence: document.querySelector("#draft-sequence"),
   sequenceNote: document.querySelector("#sequence-note"),
   rulesBadge: document.querySelector("#rules-badge"),
+  event: document.querySelector("#event-name"),
 };
 
 const sequenceGroups = [
@@ -80,6 +81,9 @@ function sidePanel(side, draft) {
   const isSideToMiddle = draft.ordering?.direction === "side_to_middle";
   const orderHint = isSideToMiddle ? '<span class="order-hint">side → centre</span>' : "";
   const pickLabel = draft.ordering?.frame_stage === "pre_swap" ? "Pre-swap picks" : "Final picks";
+  const bans = team.bans.length
+    ? team.bans.map(banCard).join("")
+    : '<p class="pending-bans">Ban portraits pending review</p>';
   return `<article class="side-panel ${side}-panel">
     <header class="team-heading">
       <div>
@@ -89,7 +93,7 @@ function sidePanel(side, draft) {
       <span class="side-chip">${side.toUpperCase()}</span>
     </header>
     <p class="section-label">Bans ${orderHint}</p>
-    <div class="ban-list">${team.bans.map(banCard).join("")}</div>
+    <div class="ban-list">${bans}</div>
     <p class="section-label">${pickLabel} ${orderHint}</p>
     <div class="pick-grid">${team.picks.map((hero, index) => pickCard(hero, index, lastPick)).join("")}</div>
   </article>`;
@@ -141,7 +145,7 @@ function sequenceCard(phase, draft, lastPickPhase) {
 }
 
 function renderSequence(draft) {
-  const rules = state.draftSequence;
+  const rules = state.draftSequences[draft.rules_id] || state.draftSequence;
   if (!rules?.phases?.length) {
     elements.sequence.innerHTML = '<p class="error-state">Draft sequence is unavailable.</p>';
     return;
@@ -155,10 +159,13 @@ function renderSequence(draft) {
   const orderSource = draft.ordering?.validation === "user_confirmed"
     ? "user-confirmed"
     : "frame-reviewed";
-  elements.sequenceNote.textContent = hasPreSwapOrder
-    ? `Hero batches are populated from the ${orderSource} pre-swap order, reading from each team’s outer side toward the centre.`
-    : "The rules establish team, action, and batch size. Hero batches will be populated after the pre-swap side-to-centre order is confirmed; only the observed last lock is named for now.";
-  elements.sequence.innerHTML = sequenceGroups.map((group) => {
+  elements.sequenceNote.textContent = rules.validation_status === "pick_phases_only"
+    ? `Pick batches are frame-reviewed in pre-swap side-to-centre order. The ban heroes and ban chronology are still pending review; no bans are implied by this sequence.`
+    : hasPreSwapOrder
+      ? `Hero batches are populated from the ${orderSource} pre-swap order, reading from each team’s outer side toward the centre.`
+      : "The rules establish team, action, and batch size. Hero batches will be populated after the pre-swap side-to-centre order is confirmed; only the observed last lock is named for now.";
+  elements.rulesBadge.textContent = rules.rules_id;
+  elements.sequence.innerHTML = (rules.groups || sequenceGroups).map((group) => {
     const groupPhases = phases.filter((phase) => phase.ordinal >= group.start && phase.ordinal <= group.end);
     return `<section class="sequence-group" aria-label="${group.label}">
       <h3>${group.label}</h3>
@@ -172,12 +179,17 @@ function render() {
   if (!draft) return;
 
   elements.select.value = String(state.index);
-  const statusClass = draft.certification === "manual" ? " manual" : "";
-  const statusText = draft.certification === "manual" ? "Visual check" : "Timer certified";
+  const statusClass = draft.certification === "manual" || draft.certification === "picks_verified" ? " manual" : "";
+  const statusText = draft.certification === "picks_verified"
+    ? "Picks verified · bans pending"
+    : draft.certification === "manual" ? "Visual check" : "Timer certified";
   const sourceSeconds = draft.requested_seconds;
-  elements.vod.href = `${state.sourceUrl}&t=${sourceSeconds}s`;
+  elements.vod.href = `${draft.source_url || state.sourceUrl}&t=${sourceSeconds}s`;
+  elements.event.textContent = draft.event || "MSC · EWC 2026";
 
-  elements.view.innerHTML = `${sidePanel("red", draft)}
+  const leftSide = draft.screen_left || "red";
+  const rightSide = leftSide === "red" ? "blue" : "red";
+  elements.view.innerHTML = `${sidePanel(leftSide, draft)}
     <aside class="versus" aria-label="Draft details">
       <p class="game-number">Game ${draft.game}</p>
       <p class="versus-mark">VS</p>
@@ -189,7 +201,7 @@ function render() {
       <p class="timestamp">Requested<br><strong>${escapeHtml(draft.requested)}</strong><br><br>Final<br><strong>${escapeHtml(draft.final)}</strong></p>
       <span class="status-chip${statusClass}">${statusText}</span>
     </aside>
-    ${sidePanel("blue", draft)}`;
+    ${sidePanel(rightSide, draft)}`;
   renderSequence(draft);
 }
 
@@ -205,8 +217,8 @@ async function loadDrafts() {
     const data = await response.json();
     state.drafts = data.drafts;
     state.draftSequence = data.draft_sequence;
+    state.draftSequences = data.draft_sequences || {};
     state.sourceUrl = data.source_url;
-    elements.rulesBadge.textContent = state.draftSequence?.rules_id || "Draft rules unavailable";
 
     elements.draftCount.textContent = state.drafts.length;
     elements.pickCount.textContent = state.drafts.reduce((total, draft) => total + draft.red.picks.length + draft.blue.picks.length, 0);
@@ -214,7 +226,7 @@ async function loadDrafts() {
     elements.select.replaceChildren(...state.drafts.map((draft, index) => {
       const option = document.createElement("option");
       option.value = String(index);
-      option.textContent = `${draft.series} · Game ${draft.game}`;
+      option.textContent = `${draft.event ? "MPL ID · " : "MSC · "}${draft.series} · Game ${draft.game}`;
       return option;
     }));
     render();

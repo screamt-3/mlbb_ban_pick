@@ -224,7 +224,7 @@ def test_ui_serves_reviewed_drafts(tmp_path: Path):
         drafts = client.get("/ui/drafts.json")
         assert drafts.status_code == 200
         payload = json.loads(drafts.text)
-        assert len(payload["drafts"]) == 8
+        assert len(payload["drafts"]) == 14
         game_one = payload["drafts"][0]
         assert game_one["last_pick"]["hero"] == "Bruno"
         assert game_one["ordering"] == {
@@ -281,7 +281,7 @@ def test_ui_serves_reviewed_drafts(tmp_path: Path):
             ["Bruno"],
         ]
 
-        for draft in payload["drafts"]:
+        for draft in payload["drafts"][:8]:
             assert draft["ordering"]["direction"] == "side_to_middle"
             assert draft["ordering"]["frame_stage"] == "pre_swap"
             assert len(draft["red"]["bans"]) == 5
@@ -307,6 +307,26 @@ def test_ui_serves_reviewed_drafts(tmp_path: Path):
                 "red": {"ban": 5, "pick": 5},
                 "blue": {"ban": 5, "pick": 5},
             }
+
+        mpl_rules = payload["draft_sequences"]["mpl-id-s18-picks-v1"]
+        assert mpl_rules["validation_status"] == "pick_phases_only"
+        assert [phase["action"] for phase in mpl_rules["phases"]] == ["pick"] * 7
+        for draft in payload["drafts"][8:]:
+            assert draft["screen_left"] == "blue"
+            assert draft["rules_id"] == mpl_rules["rules_id"]
+            assert draft["certification"] == "picks_verified"
+            assert draft["blue"]["bans"] == draft["red"]["bans"] == []
+            assert len(draft["blue"]["picks"]) == 5
+            assert len(draft["red"]["picks"]) == 5
+            offsets = {"blue": 0, "red": 0}
+            for phase in mpl_rules["phases"]:
+                side = phase["side"]
+                heroes = draft[side]["picks"][offsets[side]:offsets[side] + phase["count"]]
+                assert len(heroes) == phase["count"]
+                offsets[side] += phase["count"]
+            assert offsets == {"blue": 5, "red": 5}
+            assert draft["last_pick"]["side"] == "red"
+            assert draft["red"]["picks"][-1] == draft["last_pick"]["hero"]
 
 
 def test_evidence_frame_allows_ephemeral_success_without_retained_artifact():

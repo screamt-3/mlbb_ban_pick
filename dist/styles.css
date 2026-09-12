@@ -173,6 +173,17 @@ button, select { font: inherit; }
 .versus { position: relative; z-index: 1; }
 
 .side-panel { padding: 24px; }
+.pending-bans {
+  display: flex;
+  align-items: center;
+  min-height: 72px;
+  margin: 0;
+  padding: 12px;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
 .red-panel { border-top: 3px solid var(--red); }
 .blue-panel { border-top: 3px solid var(--blue); }
 
